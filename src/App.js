@@ -4,7 +4,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div class="container">
+      <div className="container">
         <h1>WARSAW CULTURAL MAP</h1>
         <div className="options-box">
           <button id="show-theatres">Show Theatres</button>
