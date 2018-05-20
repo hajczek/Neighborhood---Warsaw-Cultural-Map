@@ -6,7 +6,7 @@ class App extends Component {
     return (
       <div class="container">
         <h1>WARSAW CULTURAL MAP</h1>
-        <div class="options-box">
+        <div className="options-box">
           <button id="show-theatres">Show Theatres</button>
           <button id="show-cinemas">Show Cinemas</button>
           <button id="show-museums">Show Museums</button>
