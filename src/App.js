@@ -19,7 +19,8 @@ class App extends Component {
           <ul id="list-of-places"></ul>
         </div>
         <div id="map">
-          <Map 
+          <Map
+            center={{lat: 52.229676, lng: 21.012229}}
             containerElement={<div style={{height:100+'%'}} />}
             mapElement={<div style={{height:100+'%'}} />}
           />
