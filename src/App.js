@@ -19,7 +19,10 @@ class App extends Component {
           <ul id="list-of-places"></ul>
         </div>
         <div id="map">
-          <Map />
+          <Map 
+            containerElement={<div style={{height:100+'%'}} />}
+            mapElement={<div style={{height:100+'%'}} />}
+          />
         </div>
     </div>
     )
