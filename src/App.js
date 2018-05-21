@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Map from './Map.js';
 import './App.css';
 
 class App extends Component {
@@ -17,7 +18,9 @@ class App extends Component {
           <h2>List of places</h2>
           <ul id="list-of-places"></ul>
         </div>
-        <div id="map"></div>
+        <div id="map">
+          <Map />
+        </div>
     </div>
     )
   }
