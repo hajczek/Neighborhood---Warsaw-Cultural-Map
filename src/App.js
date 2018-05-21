@@ -21,6 +21,7 @@ class App extends Component {
         <div id="map">
           <Map
             center={{lat: 52.229676, lng: 21.012229}}
+            zoom={13}
             containerElement={<div style={{height:100+'%'}} />}
             mapElement={<div style={{height:100+'%'}} />}
           />
