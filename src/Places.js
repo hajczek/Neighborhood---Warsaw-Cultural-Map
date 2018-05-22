@@ -7,14 +7,14 @@ class Places extends Component {
                 <li key={i}>{marker.title}</li>
             )
         }) */
-        console.log('Props', this.props.markers)
+        // console.log('Props', this.props.markers)
 
         return(
-            <ul id="list-of-places">
+            <ol id="list-of-places">
                 {this.props.markers.map((marker, i) => (
-                    <li key={i}>{ marker.title }</li>
+                    <li key={i}><a href="javascript:google.maps.event.trigger(markers[{marker.id}],'click', {});">{ marker.title }</a></li>
                 ))}
-            </ul>
+            </ol>
         )
     }
 }

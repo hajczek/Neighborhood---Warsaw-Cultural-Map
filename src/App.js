@@ -15,15 +15,12 @@ let markers_museums = [];
 let markers_galeries = [];
 
 class App extends Component {
-  constructor(){
-    super()
-      this.state = {
+  state = {
         markers: [],
         markers_theatres: [],
         markers_cinemas: [],
         markers_museums: [],
-        markers_gakeries: [], 
-      }
+        markers_gakeries: []
   }
 
    componentWillMount(){
@@ -37,7 +34,7 @@ class App extends Component {
 
       for (let i = 0; i < theatres.length; i++) {
         // Get the position from the location array.
-        let position = theatres[i].location;
+        let location = theatres[i].location;
         let title = theatres[i].title;
         let place_id = theatres[i].place_id;
         let marker = theatres[i];
@@ -48,7 +45,7 @@ class App extends Component {
 
       for (let i = 0; i < cinemas.length; i++) {
         // Get the position from the location array.
-        let position = cinemas[i].location;
+        let location = cinemas[i].location;
         let title = cinemas[i].title;
         let place_id = cinemas[i].place_id;
         let marker = cinemas[i];
@@ -59,7 +56,7 @@ class App extends Component {
 
       for (let i = 0; i < museums.length; i++) {
         // Get the position from the location array.
-        let position = museums[i].location;
+        let location = museums[i].location;
         let title = museums[i].title;
         let place_id = museums[i].place_id;
         let marker = museums[i];
@@ -70,7 +67,7 @@ class App extends Component {
 
       for (let i = 0; i < galeries.length; i++) {
         // Get the position from the location array.
-        let position = galeries[i].location;
+        let location = galeries[i].location;
         let title = galeries[i].title;
         let place_id = galeries[i].place_id;
         let marker = galeries[i];
@@ -81,6 +78,8 @@ class App extends Component {
   }
 
   render() {
+
+  //  let markers = this.state.markers;
 
   return (
       <div className="container">
@@ -99,8 +98,9 @@ class App extends Component {
         <div id="map">
 
           <Map
+            markers={markers}
             isMarkerShown
-            googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBqtLvddq3jzZ_Lnu9M8266EMVBfXtlUT4&v=3&callback=initMap"
+            googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBqtLvddq3jzZ_Lnu9M8266EMVBfXtlUT4"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100%` }} />}
             mapElement={<div style={{ height: `100%` }} />}

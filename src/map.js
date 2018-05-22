@@ -4,9 +4,8 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'reac
 import MapStyles from './data/MapStyles';
 import { InfoBox } from 'react-google-maps/lib/components/addons/InfoBox'
 
-
 export const Map = compose(
-  withStateHandlers(() => ({
+    withStateHandlers(() => ({
     isOpen: false,
   }), {
     onToggleOpen: ({ isOpen }) => () => ({
@@ -15,25 +14,28 @@ export const Map = compose(
   }),
   withScriptjs,
   withGoogleMap
-)(props => {
-
-    return (
+)((props) => {
+        return (
         <GoogleMap
             defaultZoom={13}
             defaultCenter={{ lat: 52.229676, lng: 21.012229 }}
             defaultOptions={{ styles: MapStyles }}
-        >
+        >{ props.markers.map((marker, i) => {
+            console.log(marker.location);
             <Marker
-                position={{ lat: 52.229676, lng: 21.012229 }}
+                key={marker[i]}
+                position={marker.location}
+                title={marker.title}
+                //icon={marker.icon}
                 onClick={props.onToggleOpen}
                 >
-                {props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>
-                <div>Open</div>
-            </InfoWindow>}
+                {props.isOpen && 
+                <InfoWindow onCloseClick={props.onToggleOpen}>
+                    <div>Open</div>
+                </InfoWindow>}
             </Marker>
+        })}
         </GoogleMap>
-    )
-}
-)
+);})
 
 export default Map
