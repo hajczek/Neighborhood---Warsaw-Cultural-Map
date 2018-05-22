@@ -12,7 +12,7 @@ let markers = [];
 let markers_theatres = [];
 let markers_cinemas = [];
 let markers_museums = [];
-let markers_galeries = []; 
+let markers_galeries = [];
 
 class App extends Component {
   constructor(){
@@ -26,14 +26,14 @@ class App extends Component {
       }
   }
 
-   componentDidMount(){
+   componentWillMount(){
 
     let theatres = Theatres;
     let cinemas = Cinemas;
     let museums = Museums;
     let galeries = Galeries;
 
-    // The following group uses the location array to create an array of markers on initialize.
+   // The following group uses the location array to create an array of markers on initialize.
 
       for (let i = 0; i < theatres.length; i++) {
         // Get the position from the location array.
@@ -82,7 +82,7 @@ class App extends Component {
 
   render() {
 
-    return (
+  return (
       <div className="container">
         <h1>WARSAW CULTURAL MAP</h1>
         <div className="options-box">

@@ -8,11 +8,11 @@ class Places extends Component {
             )
         }) */
         console.log('Props', this.props.markers)
-        
+
         return(
             <ul id="list-of-places">
                 {this.props.markers.map((marker, i) => (
-                    <li key={i}>marker.title</li>
+                    <li key={i}>{ marker.title }</li>
                 ))}
             </ul>
         )
