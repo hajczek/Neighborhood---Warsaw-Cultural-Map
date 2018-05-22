@@ -1,31 +1,39 @@
 import React, { Component } from 'react'
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
+import { compose, withProps, withStateHandlers } from 'recompose'
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
+import MapStyles from './data/MapStyles';
+import { InfoBox } from 'react-google-maps/lib/components/addons/InfoBox'
 
-class Map extends Component {
 
-    render(){
-        const markers = this.props.markers.map((venue, i) => {
-            const marker = {
-                position: {
-                    lat: venue.location.lat,
-                    lng: venue.location.lng
-                }
-            }
-            return <Marker key={i} {...marker} />
-        })
+export const Map = compose(
+  withStateHandlers(() => ({
+    isOpen: false,
+  }), {
+    onToggleOpen: ({ isOpen }) => () => ({
+      isOpen: !isOpen,
+    })
+  }),
+  withScriptjs,
+  withGoogleMap
+)(props => {
 
-        return (
-            <GoogleMap
-                defaultZoom={this.props.zoom}
-                defaultCenter={this.props.center}>
-                {markers.map((marker, index) => (
-                        <Marker {...marker} />
-                    )
-                )}
-                { markers }
-            </GoogleMap>
-        )
-    }
+    return (
+        <GoogleMap
+            defaultZoom={13}
+            defaultCenter={{ lat: 52.229676, lng: 21.012229 }}
+            defaultOptions={{ styles: MapStyles }}
+        >
+            <Marker
+                position={{ lat: 52.229676, lng: 21.012229 }}
+                onClick={props.onToggleOpen}
+                >
+                {props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>
+                <div>Open</div>
+            </InfoWindow>}
+            </Marker>
+        </GoogleMap>
+    )
 }
+)
 
-export default withGoogleMap(Map)
+export default Map
