@@ -14,29 +14,32 @@ let markers_cinemas = [];
 let markers_museums = [];
 let markers_galeries = [];
 
+let theatres = Theatres;
+    let cinemas = Cinemas;
+    let museums = Museums;
+    let galeries = Galeries;
+
 class App extends Component {
   state = {
         markers: [],
         markers_theatres: [],
         markers_cinemas: [],
         markers_museums: [],
-        markers_gakeries: []
+        markers_gakeries: [],
+        Theatres,
+        Cinemas,
+        Museums,
+        Galeries
   }
 
-   componentWillMount(){
+   componentWillMount(){    
+  }
 
-    let theatres = Theatres;
-    let cinemas = Cinemas;
-    let museums = Museums;
-    let galeries = Galeries;
+  render() {
 
    // The following group uses the location array to create an array of markers on initialize.
 
       for (let i = 0; i < theatres.length; i++) {
-        // Get the position from the location array.
-        // let location = theatres[i].location;
-        // let title = theatres[i].title;
-        // let place_id = theatres[i].place_id;
          let marker = theatres[i];
         // Push the marker to our array of markers.
         markers_theatres.push(marker);
@@ -44,10 +47,6 @@ class App extends Component {
       }
 
       for (let i = 0; i < cinemas.length; i++) {
-        // Get the position from the location array.
-        //let location = cinemas[i].location;
-        //let title = cinemas[i].title;
-        //let place_id = cinemas[i].place_id;
         let marker = cinemas[i];
         // Push the marker to our array of markers.
         markers_cinemas.push(marker);
@@ -55,10 +54,6 @@ class App extends Component {
       }
 
       for (let i = 0; i < museums.length; i++) {
-        // Get the position from the location array.
-        //let location = museums[i].location;
-       // let title = museums[i].title;
-       // let place_id = museums[i].place_id;
        let marker = museums[i];
         // Push the marker to our array of markers.
         markers_museums.push(marker);
@@ -66,18 +61,11 @@ class App extends Component {
       }
 
       for (let i = 0; i < galeries.length; i++) {
-        // Get the position from the location array.
-        //let location = galeries[i].location;
-        //let title = galeries[i].title;
-       // let place_id = galeries[i].place_id;
         let marker = galeries[i];
         // Push the marker to our array of markers.
         markers_galeries.push(marker);
         markers.push(marker);
       }
-  }
-
-  render() {
 
   return (
       <div className="container">
@@ -95,8 +83,8 @@ class App extends Component {
         </div>
         <div id="map">
           <Map
-            markers={markers}
             isMarkerShown
+            markers={markers}
             googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=geometry,drawing,places&key=AIzaSyBqtLvddq3jzZ_Lnu9M8266EMVBfXtlUT4"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100%` }} />}
