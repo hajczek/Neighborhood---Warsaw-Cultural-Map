@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import { compose, withProps, withStateHandlers } from 'recompose'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import MapStyles from './data/MapStyles'
-import Places from './Places';
+import Places from './Places'
+import Icon from './icons/icon.png'
+
+let icon = Icon
 
 export const Map = compose(
     withStateHandlers(() => ({
@@ -28,7 +31,7 @@ export const Map = compose(
                 key={marker.place_id}
                 position={marker.location}
                 title={marker.title}
-                // icon={markerUrl}
+                icon={icon}
                 onClick={props.onToggleOpen}
                 >
                 {props.isOpen && 
