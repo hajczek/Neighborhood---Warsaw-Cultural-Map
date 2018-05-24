@@ -24,20 +24,22 @@ export const Map = compose(
             defaultCenter={{ lat: 52.229676, lng: 21.012229 }}
             defaultOptions={{ styles: MapStyles }}
             mapTypeControl={false}
-        >{ props.isMarkerShown && props.markers.map(marker => {
-           // let markerUrl='../icons/icon.png'
+        >{ props.isMarkerShown && props.markers.map((marker, i) => {
             return ( <Marker
                 {...marker}
-                key={marker.place_id}
+                key={i}
                 position={marker.location}
                 title={marker.title}
                 icon={icon}
-                onClick={props.onToggleOpen}
+                onClick={() => {
+                    props.toggleLocationsActive(i);
+                  }}
+                //animation={DROP}
                 >
-                {props.isOpen && 
+                {i === props.activeKey && (
                 <InfoWindow onCloseClick={props.onToggleOpen}>
                     <div>{ marker.title }</div>
-                </InfoWindow>}                
+                </InfoWindow>)}                
             </Marker>
         );})}
         </GoogleMap>

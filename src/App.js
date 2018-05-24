@@ -22,21 +22,31 @@ let theatres = Theatres;
 class App extends Component {
   state = {
         markers: [],
-        markers_theatres: [],
+       //markers_theatres: [],
         markers_cinemas: [],
         markers_museums: [],
         markers_gakeries: [],
-        Theatres,
+        // Theatres,
         Cinemas,
         Museums,
-        Galeries
-  }
+        Galeries,
+        pageTitle: "Warsaw Cultural Map",
+        listTitle: "List of Places",
+        activeKey: ""
+  };
 
-   componentWillMount(){    
+  toggleLocationsActive = locationKey => {
+    this.setState({
+      activeKey: locationKey
+    });
+  };
+
+  showTheatres = (markers) => {
+      this.setState({theatres});
+      console.log(theatres)
   }
 
   render() {
-
    // The following group uses the location array to create an array of markers on initialize.
 
       for (let i = 0; i < theatres.length; i++) {
@@ -69,20 +79,23 @@ class App extends Component {
 
   return (
       <div className="container">
-        <h1>WARSAW CULTURAL MAP</h1>
+        <h1>{this.state.pageTitle}</h1>
         <div className="options-box">
-          <button id="show-theatres">Show Theatres</button>
+          <button onClick={() => this.showTheatres()} id="show-theatres">Show Theatres</button>
           <button id="show-cinemas">Show Cinemas</button>
           <button id="show-museums">Show Museums</button>
           <button id="show-galeries">Show Galeries</button>
           <button id="show-all">Show All Places</button>
         </div>
         <div id="list-of-localisations">
-          <h2>List of places</h2>
-            <Places markers={markers} />
+          <h2>{this.state.listTitle}</h2>
+            <Places onShowTheatres={this.showTheatres} markers={markers} />
         </div>
         <div id="map">
           <Map
+            activeKey={this.state.activeKey}
+            toggleLocationsActive={this.toggleLocationsActive}
+            onShowTheatres={this.showTheatres}
             isMarkerShown
             markers={markers}
             googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=geometry,drawing,places&key=AIzaSyBqtLvddq3jzZ_Lnu9M8266EMVBfXtlUT4"
