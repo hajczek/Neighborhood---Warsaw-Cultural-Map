@@ -110,7 +110,8 @@ showAll = (markers) => {
               onShowMuseums={this.showMuseums}
               onShowGaleries={this.showGaleries}
               onShowAll={this.showAll} 
-              markers={this.state.markers} 
+              markers={this.state.markers}
+              toggleLocationsActive={this.toggleLocationsActive}
             />
         </div>
         <div id="map">
