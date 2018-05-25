@@ -3,9 +3,7 @@ import { compose, withProps, withStateHandlers } from 'recompose'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import MapStyles from './data/MapStyles'
 import Places from './Places'
-import Icon from './icons/icon.png'
-
-let icon = Icon
+// import Icon from './icons/icon.png'
 
 export const Map = compose(
     withStateHandlers(() => ({
@@ -25,12 +23,16 @@ export const Map = compose(
             defaultOptions={{ styles: MapStyles }}
             mapTypeControl={false}
         >{ props.isMarkerShown && props.markers.map((marker, i) => {
-            return ( <Marker
+            let icon = {
+                url: './icons/' + marker.type + '.png'
+            }
+            return ( 
+            <Marker
                 {...marker}
                 key={i}
                 position={marker.location}
                 title={marker.title}
-                icon={icon}
+                icon={'http://www.serwisstron.pl/icons/' + marker.type + '.png'}
                 onClick={() => {
                     props.toggleLocationsActive(i);
                   }}
@@ -39,7 +41,7 @@ export const Map = compose(
                 {i === props.activeKey && (
                 <InfoWindow onCloseClick={props.onToggleOpen}>
                     <div>{ marker.title }</div>
-                </InfoWindow>)}                
+                </InfoWindow>)}
             </Marker>
         );})}
         </GoogleMap>
