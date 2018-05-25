@@ -33,7 +33,7 @@ class App extends Component {
     });
   };
 
- componentWillMount() {
+  componentWillMount() {
 
     for (let i = 0; i < theatres.length; i++) {
       let marker = theatres[i];
@@ -46,7 +46,7 @@ class App extends Component {
       let marker = cinemas[i];
       // Push the marker to our array of markers.
       markers_all.push(marker);
-      markers_cinemas.push(marker);
+      markers_cinemas.push(marker)
     }
 
     for (let i = 0; i < museums.length; i++) {

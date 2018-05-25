@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { compose, withProps, withStateHandlers } from 'recompose'
+import { compose, withProps, withState, withStateHandlers, withHandlers } from 'recompose'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import MapStyles from './data/MapStyles'
 import Places from './Places'
-// import Icon from './icons/icon.png'
 
 export const Map = compose(
     withStateHandlers(() => ({
@@ -14,9 +13,12 @@ export const Map = compose(
     })
   }),
   withScriptjs,
-  withGoogleMap
+  withGoogleMap,
+  withState('places', 'updatePlaces', ''),
+  withState('selectedPlace', 'updateSelectedPlace', null), 
 )(props => {
-        return (
+
+  return (
         <GoogleMap
             defaultZoom={13}
             defaultCenter={{ lat: 52.229676, lng: 21.012229 }}
