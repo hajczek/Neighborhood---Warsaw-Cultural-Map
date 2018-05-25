@@ -1,10 +1,10 @@
-[{"title": "Zachęta – Narodowa Galeria Sztuki", "location": {"lat":52.239328, "lng":21.011523}, "place_id": "ChIJVVTZTmDMHkcRnl0OAlZ2awk"},
- {"title": "Xanadu Galeria i Dom Aukcyjny", "location": {"lat":52.224477, "lng":21.01012}, "place_id": "ChIJrzxZyO3MHkcRfePj6x8s9Iw"},
- {"title": "Galeria Foksal", "location": {"lat":52.234247, "lng":21.023884}, "place_id": "ChIJuzKHM_bMHkcRlCZqfRzDvXw"},
- {"title": "BWA Warszawa. Galeria sztuki współczesnej", "location": {"lat":52.237067, "lng":21.048267}, "place_id": "ChIJh-ZlsqzNHkcRvGgJ1wKGJXk"},
- {"title": "Galeria Sztuki STALOWA", "location": {"lat":52.260005, "lng":21.041029}, "place_id": "ChIJy7hI_DvMHkcRZTAfM4m9uqA"},
- {"title": "Stara Galeria Związku Polskich Artystów Fotografików", "location": {"lat":52.248792, "lng":21.014508}, "place_id": "ChIJHXL9sWjMHkcRlobwppg1_yg"},
- {"title": "Galeria XX1 Mazowieckie Centrum Kultury i Sztuki", "location": {"lat":52.240482, "lng":20.995672}, "place_id": "ChIJoU50Yn3MHkcREJKxa7X7m78"},
- {"title": "Galeria Domu Artysty Plastyka", "location": {"lat":52.237748, "lng":21.01291}, "place_id": "ChIJw8FFG2DMHkcR7wBpAPRq0-0"},
- {"title": "Ney Gallery & Prints", "location": {"lat":52.25165, "lng":20.979255}, "place_id": "ChIJlUYSSoTLHkcR8WiPir8f77M"}
+[{"title": "Zachęta – Narodowa Galeria Sztuki", "location": {"lat":52.239328, "lng":21.011523}, "place_id": "ChIJVVTZTmDMHkcRnl0OAlZ2awk", "type": "galeria"},
+ {"title": "Xanadu Galeria i Dom Aukcyjny", "location": {"lat":52.224477, "lng":21.01012}, "place_id": "ChIJrzxZyO3MHkcRfePj6x8s9Iw", "type": "galeria"},
+ {"title": "Galeria Foksal", "location": {"lat":52.234247, "lng":21.023884}, "place_id": "ChIJuzKHM_bMHkcRlCZqfRzDvXw", "type": "galeria"},
+ {"title": "BWA Warszawa. Galeria sztuki współczesnej", "location": {"lat":52.237067, "lng":21.048267}, "place_id": "ChIJh-ZlsqzNHkcRvGgJ1wKGJXk", "type": "galeria"},
+ {"title": "Galeria Sztuki STALOWA", "location": {"lat":52.260005, "lng":21.041029}, "place_id": "ChIJy7hI_DvMHkcRZTAfM4m9uqA", "type": "galeria"},
+ {"title": "Stara Galeria Związku Polskich Artystów Fotografików", "location": {"lat":52.248792, "lng":21.014508}, "place_id": "ChIJHXL9sWjMHkcRlobwppg1_yg", "type": "galeria"},
+ {"title": "Galeria XX1 Mazowieckie Centrum Kultury i Sztuki", "location": {"lat":52.240482, "lng":20.995672}, "place_id": "ChIJoU50Yn3MHkcREJKxa7X7m78", "type": "galeria"},
+ {"title": "Galeria Domu Artysty Plastyka", "location": {"lat":52.237748, "lng":21.01291}, "place_id": "ChIJw8FFG2DMHkcR7wBpAPRq0-0", "type": "galeria"},
+ {"title": "Ney Gallery & Prints", "location": {"lat":52.25165, "lng":20.979255}, "place_id": "ChIJlUYSSoTLHkcR8WiPir8f77M", "type": "galeria"}
  ]
