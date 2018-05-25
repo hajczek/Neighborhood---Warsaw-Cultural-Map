@@ -37,60 +37,54 @@ class App extends Component {
 
     for (let i = 0; i < theatres.length; i++) {
       let marker = theatres[i];
-    // Push the marker to our array of markers.
-    markers_all.push(marker);
-    markers_theatres.push(marker);
-  }
+      // Push the marker to our array of markers.
+      markers_all.push(marker);
+      markers_theatres.push(marker);
+    }
 
-  for (let i = 0; i < cinemas.length; i++) {
-    let marker = cinemas[i];
-    // Push the marker to our array of markers.
-    markers_all.push(marker);
-    markers_cinemas.push(marker);
-  }
+    for (let i = 0; i < cinemas.length; i++) {
+      let marker = cinemas[i];
+      // Push the marker to our array of markers.
+      markers_all.push(marker);
+      markers_cinemas.push(marker);
+    }
 
-  for (let i = 0; i < museums.length; i++) {
-    let marker = museums[i];
-    // Push the marker to our array of markers.
-    markers_all.push(marker);
-    markers_museums.push(marker);
-  }
+    for (let i = 0; i < museums.length; i++) {
+      let marker = museums[i];
+      // Push the marker to our array of markers.
+      markers_all.push(marker);
+      markers_museums.push(marker);
+    }
 
-  for (let i = 0; i < galeries.length; i++) {
-    let marker = galeries[i];
-    // Push the marker to our array of markers.
-    markers_all.push(marker);
-    markers_galeries.push(marker);
- }
+    for (let i = 0; i < galeries.length; i++) {
+      let marker = galeries[i];
+      // Push the marker to our array of markers.
+      markers_all.push(marker);
+      markers_galeries.push(marker);
+  }
 }
 
 showTheatres = (markers) => {
   this.setState({markers: markers_theatres});
-  console.log(markers_theatres);
 } 
 
 showCinemas = (markers) => {
   this.setState({markers: markers_cinemas});
-  console.log(markers_cinemas);
 }
 
 showMuseums = (markers) => {
   this.setState({markers: markers_museums});
-  console.log(markers_museums);
 }
 
 showGaleries = (markers) => {
   this.setState({markers: markers_galeries});
-  console.log(markers_galeries);
 }
 
 showAll = (markers) => {
   this.setState({markers: markers_all});
-  console.log(markers_all);
 }
 
-  render() {
-   // The following group uses the location array to create an array of markers on initialize.
+render() {
 
   return (
       <div className="container">
@@ -131,7 +125,7 @@ showAll = (markers) => {
             mapElement={<div style={{ height: `100%` }} />}
         />
         </div>
-    </div>
+      </div>
     )
   }
 }
