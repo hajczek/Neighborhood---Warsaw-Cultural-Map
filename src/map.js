@@ -47,7 +47,7 @@ export const Map = compose(
                           })
                         .catch(error => console.error(error)),
                 <InfoWindow onCloseClick={props.onToggleOpen}>
-                    <div><strong>{ marker.title }</strong><br/>Address: <span id="address"></span></div>
+                    <div><strong>{ marker.title }</strong><br/>Address:<br/><span id="address"></span></div>
                 </InfoWindow>)}
             </Marker>
         );})}

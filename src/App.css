@@ -90,3 +90,12 @@ h2{
   right: 0px;
   z-index: 1;
 }
+
+.gm-style-iw {
+  width: 150px !important;
+  top: 0 !important;
+  left: 0 !important;
+  border-radius: 2px 2px 0 0;
+  padding: 10px;
+  font-size: 1.2em;
+}
