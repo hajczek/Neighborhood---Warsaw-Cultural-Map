@@ -42,11 +42,12 @@ export const Map = compose(
                     geocodeByPlaceId(marker.place_id)
                         .then(results => {
                             const address = results[0].formatted_address;
-                            console.log(address);
+                            document.getElementById('address').innerHTML  += address;
+                            console.log(results);
                           })
                         .catch(error => console.error(error)),
                 <InfoWindow onCloseClick={props.onToggleOpen}>
-                    <div>{ marker.titile }</div>
+                    <div><strong>{ marker.title }</strong><br/>Address: <span id="address"></span></div>
                 </InfoWindow>)}
             </Marker>
         );})}
