@@ -84,10 +84,17 @@ showAll = (markers) => {
   this.setState({markers: markers_all});
 }
 
+showMenu(){
+  document.getElementById('panel').style.display = "block";
+}
+
 render() {
 
   return (
       <div className="container">
+        <div id="button-menu" onClick={() => this.showMenu()}>
+        Open menu
+        </div>
         <div id="panel">
           <h1>{this.state.pageTitle}</h1>
           <div className="options-box">
