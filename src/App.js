@@ -84,7 +84,7 @@ showAll = (markers) => {
   this.setState({markers: markers_all});
 }
 
-showMenu(){
+openMenu(){
   document.getElementById('panel').style.display = "block";
 }
 
@@ -92,7 +92,7 @@ render() {
 
   return (
       <div className="container">
-        <div id="open-menu" onClick={() => this.showMenu()}>
+        <div id="open-menu" onClick={() => this.openMenu()}>
         Open menu
         </div>
         <div id="panel">
