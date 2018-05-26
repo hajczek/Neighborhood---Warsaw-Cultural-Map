@@ -88,15 +88,17 @@ openMenu(){
   document.getElementById('panel').style.display = "block";
 }
 
+closeMenu(){
+  document.getElementById('panel').style.display = "none";
+}
+
 render() {
 
   return (
       <div className="container">
-        <div id="open-menu" onClick={() => this.openMenu()}>
-        Open menu
-        </div>
+        <button id="open-menu" onClick={() => this.openMenu()}>Open menu</button>
         <div id="panel">
-          <span id="close">Close menu</span>
+          <button id="close-menu" onClick={() => this.closeMenu()}>x</button>
           <h1>{this.state.pageTitle}</h1>
           <div className="options-box">
             <button onClick={() => this.showTheatres()} id="show-theatres">Show Theatres</button>

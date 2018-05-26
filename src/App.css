@@ -6,7 +6,7 @@ html, body {
 }
 
 #panel {
-  width: 360px;
+  width: 300px;
   display: none;
   position: absolute;
   left: 0;
@@ -24,8 +24,22 @@ html, body {
   font-size: 0.8em;
   color:#fff;
   cursor: pointer;
+  border: none;
 }
-#button-menu:hover {
+#close-menu{
+  position: absolute;
+  top: 11px;
+  left: 265px;
+  z-index: 10;
+  background-color: #000;
+  padding: 4px 8px;
+  font-size: 0.8em;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+#open-menu:hover,
+#close-menu:hover {
   background-color:#eee;
   color:#222;
 }
@@ -36,7 +50,7 @@ html, body {
   line-height: 35px;
   padding: 10px 10px 10px 20px;
   text-align: left;
-  width: 340px;
+  width: 270px;
 }
 h1{
   font-size: 1.2em;
@@ -48,7 +62,7 @@ h2{
   font-size: 1.1em;
 }
 #list-of-places {
-  width: 300px;
+  width: 240px;
   height: 320px;
   overflow-y: scroll;
   margin-left: 10px;
@@ -59,13 +73,14 @@ h2{
 }
 
 #list-of-places li{
-  text-decoration: none;
   color: rgb(12, 72, 128);
   cursor: pointer;
-  line-height: 30px;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 #list-of-places li:hover{
-  text-decoration: underline;
+  background-color: #fff;
+  color: rgb(7, 45, 82);
 }
 #map {
   bottom: 0px;
