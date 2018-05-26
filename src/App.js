@@ -88,25 +88,27 @@ render() {
 
   return (
       <div className="container">
-        <h1>{this.state.pageTitle}</h1>
-        <div className="options-box">
-          <button onClick={() => this.showTheatres()} id="show-theatres">Show Theatres</button>
-          <button onClick={() => this.showCinemas()} id="show-cinemas">Show Cinemas</button>
-          <button onClick={() => this.showMuseums()} id="show-museums">Show Museums</button>
-          <button onClick={() => this.showGaleries()} id="show-galeries">Show Galeries</button>
-          <button onClick={() => this.showAll()} id="show-all">Show All Places</button>
-        </div>
-        <div id="list-of-localisations">
-          <h2>{this.state.listTitle}</h2>
-            <Places 
-              onShowTheatres={this.showTheatres} 
-              onShowCinemas={this.showCinemas}
-              onShowMuseums={this.showMuseums}
-              onShowGaleries={this.showGaleries}
-              onShowAll={this.showAll} 
-              markers={this.state.markers}
-              toggleLocationsActive={this.toggleLocationsActive}
-            />
+        <div id="panel">
+          <h1>{this.state.pageTitle}</h1>
+          <div className="options-box">
+            <button onClick={() => this.showTheatres()} id="show-theatres">Show Theatres</button>
+            <button onClick={() => this.showCinemas()} id="show-cinemas">Show Cinemas</button>
+            <button onClick={() => this.showMuseums()} id="show-museums">Show Museums</button>
+            <button onClick={() => this.showGaleries()} id="show-galeries">Show Galeries</button>
+            <button onClick={() => this.showAll()} id="show-all">Show All Places</button>
+          </div>
+          <div id="list-of-localisations">
+            <h2>{this.state.listTitle}</h2>
+              <Places 
+                onShowTheatres={this.showTheatres} 
+                onShowCinemas={this.showCinemas}
+                onShowMuseums={this.showMuseums}
+                onShowGaleries={this.showGaleries}
+                onShowAll={this.showAll} 
+                markers={this.state.markers}
+                toggleLocationsActive={this.toggleLocationsActive}
+              />
+          </div>
         </div>
         <div id="map">
           <Map

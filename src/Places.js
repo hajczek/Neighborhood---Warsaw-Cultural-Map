@@ -7,7 +7,7 @@ class Places extends Component {
                 {this.props.markers.map((marker, i) => (
                     <li key={i} onClick={() => {
                         this.props.toggleLocationsActive(i);
-                      }}>{ marker.title }</li>
+                      }}>{ marker.title } »</li>
                 ))}
             </ol>
         )
