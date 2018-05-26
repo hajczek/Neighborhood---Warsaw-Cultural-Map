@@ -51,13 +51,14 @@ export const Map = compose(
                         
                 <InfoWindow onCloseClick={props.onToggleOpen}>
                     <div>
-                        <span id="title"><strong>{ marker.title }</strong></span>
-                        <br/>Address:<br/>
+                        <span id="title">{ marker.title }</span>
+                        <br/><br/>
+                        <span id="address-title">Address:</span>
+                        <br/>
                         <span id="address"></span>
                         <br/><br/>
                         <span id="short-article"></span>
                         <br/><br/>
-                        <span id="see-link"></span>
                         <a target="blank" id="results"></a>
                         <span id="info"></span>
                     </div>

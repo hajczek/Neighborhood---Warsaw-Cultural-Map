@@ -4,7 +4,7 @@
  {"title": "Cinema City - Wołoska", "location": {"lat":52.179649, "lng":21.00396}, "place_id": "ChIJg--Tk9gyGUcRg9FNyP4xV8s", "type": "cinema"},
  {"title": "Cinema City - Ostrobramska", "location": {"lat":52.231335, "lng":21.104831}, "place_id": "ChIJRwfx5ojNHkcRkLLGQre0_-g", "type": "cinema"},
  {"title": "Kino Wisła w Warszawie", "location": {"lat":52.269512, "lng":20.986721}, "place_id": "ChIJkb2F-O3LHkcRlUFkblk_Rqg", "type": "cinema"},
- {"title": "Kino Praha w Warszawie", "location": {"lat":52.251648, "lng":21.035634}, "place_id": "ChIJLSPqwkbMHkcRS6D71vyJlSI", "type": "cinema"},
+ {"title": "Nove Kino Praha w Warszawie", "location": {"lat":52.251648, "lng":21.035634}, "place_id": "ChIJLSPqwkbMHkcRS6D71vyJlSI", "type": "cinema"},
  {"title": "Kino Muranów w Warszawie", "location": {"lat":52.245221, "lng":20.998975}, "place_id": "ChIJtT6XOGPMHkcRapL1TUAZ7jM", "type": "cinema"},
  {"title": "Kino Kultura w Warszawie", "location": {"lat": 52.243371, "lng":21.014182}, "place_id": "ChIJH_3JJ2fMHkcRwHOP_7J_yE0", "type": "cinema"},
  {"title": "Kino Atlantic w Warszawie", "location": {"lat": 52.231602, "lng":21.012528}, "place_id": "ChIJ3b4effPMHkcRkExradLGdhw", "type": "cinema"},

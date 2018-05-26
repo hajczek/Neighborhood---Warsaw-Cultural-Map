@@ -12,7 +12,7 @@
  {"title": "Teatr Polski w Warszawie", "location": {"lat":52.238526, "lng":21.019701}, "place_id": "ChIJEdEMA1_MHkcRcNzaYVHGAGI", "type": "theatre"},
  {"title": "Teatr Muzyczny Roma w Warszawie", "location": {"lat":52.227603, "lng":21.007642}, "place_id": "ChIJISYKpPLMHkcRE7SwWw0XMMU", "type": "theatre"},
  {"title": "Teatr Współczesny w Warszawie", "location": {"lat":52.219043, "lng":21.017095}, "place_id": "ChIJS_2QHObMHkcRC4KWB34XOv0", "type": "theatre"},
- {"title": "TR Warszawa w Warszawie", "location": {"lat":52.214908, "lng":21.021194}, "place_id": "ChIJdQPESefMHkcRCyB2tEfF7bw", "type": "theatre"},
+ {"title": "TR Warszawa", "location": {"lat":52.214908, "lng":21.021194}, "place_id": "ChIJdQPESefMHkcRCyB2tEfF7bw", "type": "theatre"},
  {"title": "Teatr Nowy w Warszawie", "location": {"lat":52.205225, "lng":21.019903}, "place_id": "ChIJSSweV9jMHkcRRJjVljyoUMk", "type": "theatre"},
  {"title": "Teatr Powszechny w Warszawie", "location": {"lat":52.247022, "lng":21.048466}, "place_id": "ChIJpVBnB0zMHkcR0ZpZX0FCNus", "type": "theatre"}
 ]

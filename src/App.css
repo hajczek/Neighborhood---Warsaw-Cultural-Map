@@ -72,15 +72,18 @@ h2{
   padding-bottom: 15px;
 }
 
-#list-of-places li{
+#list-of-places li,
+#results{
   color: rgb(12, 72, 128);
   cursor: pointer;
   line-height: 1.6;
   margin-bottom: 10px;
 }
-#list-of-places li:hover{
+#list-of-places li:hover,
+#results:hover{
   background-color: #fff;
   color: rgb(7, 45, 82);
+  text-decoration: none;
 }
 #map {
   bottom: 0px;
@@ -92,9 +95,19 @@ h2{
 }
 
 .gm-style-iw {
+  width: 200px !important;
   top: 0 !important;
   left: 0 !important;
   border-radius: 2px 2px 0 0;
   padding: 10px;
   font-size: 1.2em;
+}
+
+#title {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+#address-title {
+  text-decoration: underline;
 }
