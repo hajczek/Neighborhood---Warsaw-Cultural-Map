@@ -10,6 +10,7 @@
     "react-icons": "^2.2.7",
     "react-places-autocomplete": "^7.1.1",
     "react-scripts": "1.1.4",
+    "styled-reset-css": "^1.0.0-0",
     "superagent": "^3.8.3"
   },
   "scripts": {
