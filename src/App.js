@@ -92,10 +92,11 @@ render() {
 
   return (
       <div className="container">
-        <div id="button-menu" onClick={() => this.showMenu()}>
+        <div id="open-menu" onClick={() => this.showMenu()}>
         Open menu
         </div>
         <div id="panel">
+          <span id="close">Close menu</span>
           <h1>{this.state.pageTitle}</h1>
           <div className="options-box">
             <button onClick={() => this.showTheatres()} id="show-theatres">Show Theatres</button>
