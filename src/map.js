@@ -4,6 +4,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'reac
 import MapStyles from './data/MapStyles'
 import Places from './Places'
 import { geocodeByPlaceId } from 'react-places-autocomplete'
+import { getInfo } from './wikipediaApi.js'
 
 export const Map = compose(
     withStateHandlers(() => ({
@@ -39,6 +40,7 @@ export const Map = compose(
                 //animation={DROP}
                 >
                 {i === props.activeKey && (
+                    getInfo(marker.title),
                     geocodeByPlaceId(marker.place_id)
                         .then(results => {
                             const address = results[0].formatted_address;
@@ -46,8 +48,19 @@ export const Map = compose(
                             console.log(results);
                           })
                         .catch(error => console.error(error)),
+                        
                 <InfoWindow onCloseClick={props.onToggleOpen}>
-                    <div><strong>{ marker.title }</strong><br/>Address:<br/><span id="address"></span></div>
+                    <div>
+                        <span id="title"><strong>{ marker.title }</strong></span>
+                        <br/>Address:<br/>
+                        <span id="address"></span>
+                        <br/><br/>
+                        <span id="short-article"></span>
+                        <br/><br/>
+                        <span id="see-link"></span>
+                        <a target="blank" id="results"></a>
+                        <span id="info"></span>
+                    </div>
                 </InfoWindow>)}
             </Marker>
         );})}
