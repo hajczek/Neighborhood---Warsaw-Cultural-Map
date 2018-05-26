@@ -66,22 +66,27 @@ class App extends Component {
 
 showTheatres = (markers) => {
   this.setState({markers: markers_theatres});
+  document.getElementById('panel').style.display = "none";
 } 
 
 showCinemas = (markers) => {
   this.setState({markers: markers_cinemas});
+  document.getElementById('panel').style.display = "none";
 }
 
 showMuseums = (markers) => {
   this.setState({markers: markers_museums});
+  document.getElementById('panel').style.display = "none";
 }
 
 showGaleries = (markers) => {
   this.setState({markers: markers_galeries});
+  document.getElementById('panel').style.display = "none";
 }
 
 showAll = (markers) => {
   this.setState({markers: markers_all});
+  document.getElementById('panel').style.display = "none";
 }
 
 openMenu(){
@@ -116,6 +121,7 @@ render() {
                 onShowGaleries={this.showGaleries}
                 onShowAll={this.showAll} 
                 markers={this.state.markers}
+                closeMenu={this.closeMenu}
                 toggleLocationsActive={this.toggleLocationsActive}
               />
           </div>
