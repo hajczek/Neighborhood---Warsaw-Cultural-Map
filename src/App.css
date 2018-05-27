@@ -6,7 +6,7 @@ html, body {
 }
 
 #panel {
-  width: 300px;
+  width: 290px;
   display: none;
   position: absolute;
   left: 0;
@@ -29,7 +29,7 @@ html, body {
 #close-menu{
   position: absolute;
   top: 11px;
-  left: 265px;
+  left: 255px;
   z-index: 10;
   background-color: #000;
   padding: 4px 8px;
@@ -50,7 +50,26 @@ html, body {
   line-height: 35px;
   padding: 10px 10px 10px 20px;
   text-align: left;
-  width: 270px;
+  width: 260px;
+}
+.options-box button {
+  display: block;
+  float: left;
+  width: 120px;
+  margin-top: 5px;
+}
+#show-theatres,
+#show-museums {
+  margin-right: 10px;
+}
+#show-museums,
+#show-galeries {
+  margin-top: 10px;
+}
+#show-all{
+  width: 250px;
+  margin: 10px 0 20px 0;
+  padding: 10px 0;
 }
 h1{
   font-size: 1.2em;
@@ -62,7 +81,7 @@ h2{
   font-size: 1.1em;
 }
 #list-of-places {
-  width: 240px;
+  width: 230px;
   height: 320px;
   overflow-y: scroll;
   margin-left: 10px;
@@ -76,8 +95,9 @@ h2{
 #results{
   color: rgb(12, 72, 128);
   cursor: pointer;
-  line-height: 1.6;
+  line-height: 1.4;
   margin-bottom: 10px;
+  padding: 3px 0;
 }
 #results{
   font-size: 1.2em;
@@ -120,4 +140,23 @@ h2{
 #short-article,
 #address-title{
   font-size: 1.1em;
+}
+
+.textBtn{
+  position: relative;
+  top: -10px;
+  left: 3px;
+}
+
+#show-all .textBtn{
+  top: 0;
+  left: 0;
+}
+
+@media (max-width:767px) {
+
+  #open-menu {
+    left: 120px;
+    padding: 10px;
+  }
 }

@@ -67,34 +67,41 @@ class App extends Component {
 showTheatres = (markers) => {
   this.setState({markers: markers_theatres});
   document.getElementById('panel').style.display = "none";
+  document.getElementById('open-menu').style.display = "block";
 } 
 
 showCinemas = (markers) => {
   this.setState({markers: markers_cinemas});
   document.getElementById('panel').style.display = "none";
+  document.getElementById('open-menu').style.display = "block";
 }
 
 showMuseums = (markers) => {
   this.setState({markers: markers_museums});
   document.getElementById('panel').style.display = "none";
+  document.getElementById('open-menu').style.display = "block";
 }
 
 showGaleries = (markers) => {
   this.setState({markers: markers_galeries});
   document.getElementById('panel').style.display = "none";
+  document.getElementById('open-menu').style.display = "block";
 }
 
 showAll = (markers) => {
   this.setState({markers: markers_all});
   document.getElementById('panel').style.display = "none";
+  document.getElementById('open-menu').style.display = "block";
 }
 
 openMenu(){
   document.getElementById('panel').style.display = "block";
+  document.getElementById('open-menu').style.display = "none";
 }
 
 closeMenu(){
   document.getElementById('panel').style.display = "none";
+  document.getElementById('open-menu').style.display = "block";
 }
 
 render() {
@@ -106,11 +113,11 @@ render() {
           <button id="close-menu" onClick={() => this.closeMenu()}>x</button>
           <h1>{this.state.pageTitle}</h1>
           <div className="options-box">
-            <button onClick={() => this.showTheatres()} id="show-theatres">Show Theatres</button>
-            <button onClick={() => this.showCinemas()} id="show-cinemas">Show Cinemas</button>
-            <button onClick={() => this.showMuseums()} id="show-museums">Show Museums</button>
-            <button onClick={() => this.showGaleries()} id="show-galeries">Show Galeries</button>
-            <button onClick={() => this.showAll()} id="show-all">Show All Places</button>
+            <button onClick={() => this.showTheatres()} id="show-theatres"><img alt="Theatre symbol" src="http://www.serwisstron.pl/icons/theatre.png" /><span class="textBtn">Theatres</span></button>
+            <button onClick={() => this.showCinemas()} id="show-cinemas"><img alt="Cinema symbol" src="http://www.serwisstron.pl/icons/cinema.png" /><span class="textBtn">Cinemas</span></button>
+            <button onClick={() => this.showMuseums()} id="show-museums"><img alt="Museum symbol" src="http://www.serwisstron.pl/icons/museum.png" /><span class="textBtn">Museums</span></button>
+            <button onClick={() => this.showGaleries()} id="show-galeries"><img alt="Gallery symbol" src="http://www.serwisstron.pl/icons/galeria.png" /><span class="textBtn">Galeries</span></button>
+            <button onClick={() => this.showAll()} id="show-all"><span class="textBtn">Show All Places</span></button>
           </div>
           <div id="list-of-localisations">
             <h2>{this.state.listTitle}</h2>
