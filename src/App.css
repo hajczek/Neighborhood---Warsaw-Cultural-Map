@@ -79,6 +79,10 @@ h2{
   line-height: 1.6;
   margin-bottom: 10px;
 }
+#results{
+  font-size: 1.2em;
+  font-weight: bold;
+}
 #list-of-places li:hover,
 #results:hover{
   background-color: #fff;
@@ -110,4 +114,10 @@ h2{
 
 #address-title {
   text-decoration: underline;
+}
+
+#address,
+#short-article,
+#address-title{
+  font-size: 1.1em;
 }
