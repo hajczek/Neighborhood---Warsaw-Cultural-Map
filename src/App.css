@@ -57,7 +57,15 @@ html, body {
   float: left;
   width: 120px;
   margin-top: 5px;
+  background-color: #eee;
+  border-radius: 5px;
+  cursor: pointer;
 }
+
+.options-box button:hover{
+  background-color:#fefefe;
+}
+
 #show-theatres,
 #show-museums {
   margin-right: 10px;
@@ -118,6 +126,10 @@ h2{
   z-index: 1;
 }
 
+#info-window{
+  overflow: hidden;
+}
+
 .gm-style-iw {
   width: 200px !important;
   top: 0 !important;
@@ -142,6 +154,11 @@ h2{
   font-size: 1.1em;
 }
 
+#info{
+  color: #ff0000;
+  padding: 5px;
+}
+
 .textBtn{
   position: relative;
   top: -10px;
@@ -151,6 +168,11 @@ h2{
 #show-all .textBtn{
   top: 0;
   left: 0;
+}
+
+.offline {
+  position: absolute;
+  left: 200px;
 }
 
 @media (max-width:767px) {

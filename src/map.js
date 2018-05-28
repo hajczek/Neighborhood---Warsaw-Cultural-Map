@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { compose, withProps, withState, withStateHandlers, withHandlers } from 'recompose'
+import { compose, withState, withStateHandlers } from 'recompose'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import MapStyles from './data/MapStyles'
 import Places from './Places'
 import { geocodeByPlaceId } from 'react-places-autocomplete'
 import { getInfo } from './wikipediaApi.js'
+
+const google = window.google
 
 export const Map = compose(
     withStateHandlers(() => ({
@@ -37,7 +39,7 @@ export const Map = compose(
                 onClick={() => {
                     props.toggleLocationsActive(i);
                   }}
-                //animation={DROP}
+                // defaultAnimation={google.maps.Animation.DROP}
                 >
                 {i === props.activeKey && (
                     getInfo(marker.title),
@@ -50,7 +52,7 @@ export const Map = compose(
                         .catch(error => console.error(error)),
                         
                 <InfoWindow onCloseClick={props.onToggleOpen}>
-                    <div>
+                    <div id="info-window">
                         <span id="title">{ marker.title }</span>
                         <br/><br/>
                         <span id="address-title">Address:</span>
@@ -58,8 +60,7 @@ export const Map = compose(
                         <span id="address"></span>
                         <br/><br/>
                         <span id="short-article"></span>
-                        <br/><br/>
-                        <a target="blank" id="results"></a>
+                        <a target="blank" id="results"></a><br/>
                         <span id="info"></span>
                     </div>
                 </InfoWindow>)}

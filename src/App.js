@@ -113,11 +113,11 @@ render() {
           <button id="close-menu" onClick={() => this.closeMenu()}>x</button>
           <h1>{this.state.pageTitle}</h1>
           <div className="options-box">
-            <button onClick={() => this.showTheatres()} id="show-theatres"><img alt="Theatre symbol" src="http://www.serwisstron.pl/icons/theatre.png" /><span class="textBtn">Theatres</span></button>
-            <button onClick={() => this.showCinemas()} id="show-cinemas"><img alt="Cinema symbol" src="http://www.serwisstron.pl/icons/cinema.png" /><span class="textBtn">Cinemas</span></button>
-            <button onClick={() => this.showMuseums()} id="show-museums"><img alt="Museum symbol" src="http://www.serwisstron.pl/icons/museum.png" /><span class="textBtn">Museums</span></button>
-            <button onClick={() => this.showGaleries()} id="show-galeries"><img alt="Gallery symbol" src="http://www.serwisstron.pl/icons/galeria.png" /><span class="textBtn">Galeries</span></button>
-            <button onClick={() => this.showAll()} id="show-all"><span class="textBtn">Show All Places</span></button>
+            <button onClick={() => this.showTheatres()} id="show-theatres"><img alt="Theatre symbol" src="http://www.serwisstron.pl/icons/theatre.png" /><span className="textBtn">Theatres</span></button>
+            <button onClick={() => this.showCinemas()} id="show-cinemas"><img alt="Cinema symbol" src="http://www.serwisstron.pl/icons/cinema.png" /><span className="textBtn">Cinemas</span></button>
+            <button onClick={() => this.showMuseums()} id="show-museums"><img alt="Museum symbol" src="http://www.serwisstron.pl/icons/museum.png" /><span className="textBtn">Museums</span></button>
+            <button onClick={() => this.showGaleries()} id="show-galeries"><img alt="Gallery symbol" src="http://www.serwisstron.pl/icons/galeria.png" /><span className="textBtn">Galeries</span></button>
+            <button onClick={() => this.showAll()} id="show-all"><span className="textBtn">Show All Places</span></button>
           </div>
           <div id="list-of-localisations">
             <h2>{this.state.listTitle}</h2>
@@ -134,6 +134,7 @@ render() {
           </div>
         </div>
         <div id="map">
+        {(navigator.onLine)&&(
           <Map
             activeKey={this.state.activeKey}
             toggleLocationsActive={this.toggleLocationsActive}
@@ -148,7 +149,13 @@ render() {
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100%` }} />}
             mapElement={<div style={{ height: `100%` }} />}
-        />
+            />)}
+            {(!navigator.onLine)&&(
+              <div className="offline">
+                <h3>You are offline.</h3>
+                  <p>You can see addresses for cultural places by using menu</p>
+              </div>
+            )}
         </div>
       </div>
     )
