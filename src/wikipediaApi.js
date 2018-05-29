@@ -20,8 +20,8 @@ export const getInfo = (search) => {
 
     const requestError = (e) => {
       console.log(e);
-      let infoWindow = document.getElementById('info-window');
-      let errorInfo = document.createElement('span');
-      errorInfo.innerHTML = 'Oh no! There was an error making a request for this place.';
-      document.body.insertBefore(errorInfo, infoWindow);
+      let infoBox = document.getElementById('info-box');
+      infoBox.setAttribute('class', 'show');
+      setTimeout(function(){ infoBox.setAttribute('class', 'hide') }, 3000);
     }
+    

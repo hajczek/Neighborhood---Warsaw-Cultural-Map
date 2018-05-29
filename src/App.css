@@ -172,7 +172,28 @@ h2{
 
 .offline {
   position: absolute;
-  left: 200px;
+  left: 300px;
+}
+
+#info-box {
+  position: absolute;
+  left: 300px;
+  top: 0;
+  z-index:10;
+  background-color:#fff;
+  color:#ff0000;
+  padding: 20px;
+  width: 200px;
+  line-height: 1.6;
+  display: none;
+}
+
+.show{
+  display: block !important;
+}
+
+.hide{
+  display: none !important;
 }
 
 @media (max-width:767px) {

@@ -61,12 +61,12 @@ export const Map = compose(
                         <br/><br/>
                         <span id="short-article"></span>
                         <a target="blank" id="results"></a><br/>
-                        <span id="info"></span>
                     </div>
                 </InfoWindow>)}
             </Marker>
         );})}
         </GoogleMap>
+        
 );})
 
 export default Map

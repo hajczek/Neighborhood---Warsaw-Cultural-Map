@@ -8,23 +8,24 @@ import Cinemas from './data/cinemas.json'
 import Museums from './data/museums.json'
 import Galeries from './data/galeries.json'
 
+let theatres = Theatres;
+let cinemas = Cinemas;
+let museums = Museums;
+let galeries = Galeries;
+
 let markers_all = [];
 let markers_theatres = [];
 let markers_cinemas = [];
 let markers_museums = [];
 let markers_galeries = [];
 
-let theatres = Theatres;
-let cinemas = Cinemas;
-let museums = Museums;
-let galeries = Galeries;
-
 class App extends Component {
   state = {
         markers: markers_all,
         pageTitle: "Warsaw Cultural Map",
         listTitle: "List of Places",
-        activeKey: ""
+        activeKey: "",
+        error: "There was an error making a request for this place."
   };
 
   toggleLocationsActive = locationKey => {
@@ -104,11 +105,16 @@ closeMenu(){
   document.getElementById('open-menu').style.display = "block";
 }
 
+hideError(){
+  let infoBox = document.getElementById('info-box');
+  infoBox.setAttribute('styles', 'display: none;');
+}
+
 render() {
 
   return (
       <div className="container">
-        <button id="open-menu" onClick={() => this.openMenu()}>Open menu</button>
+        <button id="open-menu" onClick={() => this.openMenu()}>Open map menu</button>
         <div id="panel">
           <button id="close-menu" onClick={() => this.closeMenu()}>x</button>
           <h1>{this.state.pageTitle}</h1>
@@ -130,14 +136,19 @@ render() {
                 markers={this.state.markers}
                 closeMenu={this.closeMenu}
                 toggleLocationsActive={this.toggleLocationsActive}
+                hideError={this.hideError}
               />
           </div>
+        </div>
+        <div id="info-box">
+            <span id="next">{ this.state.error }</span>
         </div>
         <div id="map">
         {(navigator.onLine)&&(
           <Map
             activeKey={this.state.activeKey}
             toggleLocationsActive={this.toggleLocationsActive}
+            hideError={this.hideError}
             isMarkerShown
             onShowTheatres={this.showTheatres}
             onShowCinemas={this.showCinemas}
@@ -152,8 +163,9 @@ render() {
             />)}
             {(!navigator.onLine)&&(
               <div className="offline">
-                <h3>You are offline.</h3>
-                  <p>You can see addresses for cultural places by using menu</p>
+                <h3>You are offline ...</h3>
+                  <p>You can see list for cultural places in Warsaw.<br/>
+                  For this click button 'Open map menu'.</p>
               </div>
             )}
         </div>
