@@ -1,3 +1,6 @@
+/**
+  * @description Import needed components
+  */
 import React, { Component } from 'react'
 import { getInfo } from './wikipediaApi.js'
 
