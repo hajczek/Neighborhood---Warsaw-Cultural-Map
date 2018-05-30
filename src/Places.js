@@ -9,6 +9,7 @@ class Places extends Component {
                 {this.props.markers.map((marker, i) => (                    
                     <li tabIndex="0" key={i} onClick={() => {
                         this.props.toggleLocationsActive(i);
+                        this.props.closeMenu();
                         getInfo(marker.title);
                     }}>{ marker.title } »</li>
                 ))}

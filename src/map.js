@@ -21,7 +21,7 @@ export const Map = compose(
 
   return (
       
-        <GoogleMap role="application" onGoogleApiLoaded={this.initMap}
+        <GoogleMap role="application"
             defaultZoom={13}
             defaultCenter={{ lat: 52.229676, lng: 21.012229 }}
             defaultOptions={{ styles: MapStyles }}
