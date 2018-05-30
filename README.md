@@ -37,10 +37,6 @@ Wikipedia Api displays short information about choosen place and get link to art
 
 1.0
 
-
-### LINKS
-
-
 ### LICENSE
 
 The MIT License - See [license.md](https://github.com/hajczek/Neighborhood---Warsaw-Cultural-Map/blob/master/license/License.md)
