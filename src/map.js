@@ -1,20 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { compose, withState, withStateHandlers } from 'recompose'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import MapStyles from './data/MapStyles'
-import Places from './Places'
 import { geocodeByPlaceId } from 'react-places-autocomplete'
 import { getInfo } from './wikipediaApi.js'
 
-const google = window.google
-
 export const Map = compose(
     withStateHandlers(() => ({
-    isOpen: false,
-  }), {
+        isOpen: false,
+    }), {
     onToggleOpen: ({ isOpen }) => () => ({
-      isOpen: !isOpen,
-    })
+        isOpen: !isOpen,
+    }),
   }),
   withScriptjs,
   withGoogleMap,
@@ -23,7 +20,8 @@ export const Map = compose(
 )(props => {
 
   return (
-        <GoogleMap
+      
+        <GoogleMap role="application" onGoogleApiLoaded={this.initMap}
             defaultZoom={13}
             defaultCenter={{ lat: 52.229676, lng: 21.012229 }}
             defaultOptions={{ styles: MapStyles }}
@@ -35,32 +33,31 @@ export const Map = compose(
                 key={i}
                 position={marker.location}
                 title={marker.title}
-                icon={'http://www.serwisstron.pl/icons/' + marker.type + '.png'}
+                icon={'http://www.serwisstron.pl/Map/icons/' + marker.type + '.png'}
+                animation={window.google.maps.Animation.DROP}
                 onClick={() => {
                     props.toggleLocationsActive(i);
-                  }}
-                // defaultAnimation={google.maps.Animation.DROP}
+                    getInfo(marker.title);
+                }}
                 >
                 {i === props.activeKey && (
-                    getInfo(marker.title),
                     geocodeByPlaceId(marker.place_id)
                         .then(results => {
                             const address = results[0].formatted_address;
                             document.getElementById('address').innerHTML  += address;
-                            console.log(results);
                           })
                         .catch(error => console.error(error)),
                         
                 <InfoWindow onCloseClick={props.onToggleOpen}>
                     <div id="info-window">
-                        <span id="title">{ marker.title }</span>
+                        <span tabIndex="0" id="title">{ marker.title }</span>
                         <br/><br/>
-                        <span id="address-title">Address:</span>
+                        <span tabIndex="0" id="address-title">Address:</span>
                         <br/>
-                        <span id="address"></span>
+                        <span tabIndex="0" id="address"></span>
                         <br/><br/>
-                        <span id="short-article"></span>
-                        <a target="blank" id="results"></a><br/>
+                        <span tabIndex="0" id="short-article"></span>
+                        <a tabIndex="0" target="blank" id="results"></a><br/>
                     </div>
                 </InfoWindow>)}
             </Marker>

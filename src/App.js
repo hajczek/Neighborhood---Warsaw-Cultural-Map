@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Map from './Map.js';
 import './App.css';
 import Places from './Places.js'
-// import superagent from 'superagent'
 import Theatres from './data/theatres.json'
 import Cinemas from './data/cinemas.json'
 import Museums from './data/museums.json'
@@ -25,7 +24,7 @@ class App extends Component {
         pageTitle: "Warsaw Cultural Map",
         listTitle: "List of Places",
         activeKey: "",
-        error: "There was an error making a request for this place."
+        error: "There was an error with making a request for information about this place."
   };
 
   toggleLocationsActive = locationKey => {
@@ -38,28 +37,24 @@ class App extends Component {
 
     for (let i = 0; i < theatres.length; i++) {
       let marker = theatres[i];
-      // Push the marker to our array of markers.
       markers_all.push(marker);
       markers_theatres.push(marker);
     }
 
     for (let i = 0; i < cinemas.length; i++) {
       let marker = cinemas[i];
-      // Push the marker to our array of markers.
       markers_all.push(marker);
       markers_cinemas.push(marker)
     }
 
     for (let i = 0; i < museums.length; i++) {
       let marker = museums[i];
-      // Push the marker to our array of markers.
       markers_all.push(marker);
       markers_museums.push(marker);
     }
 
     for (let i = 0; i < galeries.length; i++) {
       let marker = galeries[i];
-      // Push the marker to our array of markers.
       markers_all.push(marker);
       markers_galeries.push(marker);
   }
@@ -105,11 +100,6 @@ closeMenu(){
   document.getElementById('open-menu').style.display = "block";
 }
 
-hideError(){
-  let infoBox = document.getElementById('info-box');
-  infoBox.setAttribute('styles', 'display: none;');
-}
-
 render() {
 
   return (
@@ -117,16 +107,16 @@ render() {
         <button id="open-menu" onClick={() => this.openMenu()}>Open map menu</button>
         <div id="panel">
           <button id="close-menu" onClick={() => this.closeMenu()}>x</button>
-          <h1>{this.state.pageTitle}</h1>
+          <h1 tabIndex="0">{this.state.pageTitle}</h1>
           <div className="options-box">
-            <button onClick={() => this.showTheatres()} id="show-theatres"><img alt="Theatre symbol" src="http://www.serwisstron.pl/icons/theatre.png" /><span className="textBtn">Theatres</span></button>
-            <button onClick={() => this.showCinemas()} id="show-cinemas"><img alt="Cinema symbol" src="http://www.serwisstron.pl/icons/cinema.png" /><span className="textBtn">Cinemas</span></button>
-            <button onClick={() => this.showMuseums()} id="show-museums"><img alt="Museum symbol" src="http://www.serwisstron.pl/icons/museum.png" /><span className="textBtn">Museums</span></button>
-            <button onClick={() => this.showGaleries()} id="show-galeries"><img alt="Gallery symbol" src="http://www.serwisstron.pl/icons/galeria.png" /><span className="textBtn">Galeries</span></button>
-            <button onClick={() => this.showAll()} id="show-all"><span className="textBtn">Show All Places</span></button>
+            <button tabIndex="0" onClick={() => this.showTheatres()} id="show-theatres"><img alt="Theatre symbol" src="http://www.serwisstron.pl/icons/theatre.png" /><span className="textBtn">Theatres</span></button>
+            <button tabIndex="0" onClick={() => this.showCinemas()} id="show-cinemas"><img alt="Cinema symbol" src="http://www.serwisstron.pl/icons/cinema.png" /><span className="textBtn">Cinemas</span></button>
+            <button tabIndex="0" onClick={() => this.showMuseums()} id="show-museums"><img alt="Museum symbol" src="http://www.serwisstron.pl/icons/museum.png" /><span className="textBtn">Museums</span></button>
+            <button tabIndex="0" onClick={() => this.showGaleries()} id="show-galeries"><img alt="Gallery symbol" src="http://www.serwisstron.pl/icons/galeria.png" /><span className="textBtn">Galeries</span></button>
+            <button tabIndex="0" onClick={() => this.showAll()} id="show-all"><span className="textBtn">Show All Places</span></button>
           </div>
           <div id="list-of-localisations">
-            <h2>{this.state.listTitle}</h2>
+            <h2 tabIndex="0">{this.state.listTitle}</h2>
               <Places 
                 onShowTheatres={this.showTheatres} 
                 onShowCinemas={this.showCinemas}
@@ -141,14 +131,13 @@ render() {
           </div>
         </div>
         <div id="info-box">
-            <span id="next">{ this.state.error }</span>
+            <span tabIndex="0" id="next">{ this.state.error }</span>
         </div>
         <div id="map">
         {(navigator.onLine)&&(
           <Map
             activeKey={this.state.activeKey}
             toggleLocationsActive={this.toggleLocationsActive}
-            hideError={this.hideError}
             isMarkerShown
             onShowTheatres={this.showTheatres}
             onShowCinemas={this.showCinemas}
@@ -156,16 +145,18 @@ render() {
             onShowGaleries={this.showGaleries}
             onShowAll={this.showAll}
             markers={this.state.markers}
-            googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=geometry,drawing,places&key=AIzaSyBqtLvddq3jzZ_Lnu9M8266EMVBfXtlUT4"
+            googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBqtLvddq3jzZ_Lnu9M8266EMVBfXtlUT4"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100%` }} />}
             mapElement={<div style={{ height: `100%` }} />}
             />)}
             {(!navigator.onLine)&&(
-              <div className="offline">
-                <h3>You are offline ...</h3>
-                  <p>You can see list for cultural places in Warsaw.<br/>
-                  For this click button 'Open map menu'.</p>
+              <div id="container-offline">
+                <div id="info-offline">
+                  <h3>You are offline ...</h3>
+                    <p>You can see list for cultural places in Warsaw.<br/>
+                    For this click button 'Open map menu'.</p>
+                </div>
               </div>
             )}
         </div>
