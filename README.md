@@ -13,15 +13,15 @@ Wikipedia Api displays short information about choosen place and get link to art
 
 ## REACT COMPONENTS USES
 
-[react-google-maps](https://github.com/tomchentw/react-google-maps)
-[react-places-autocomplete](https://github.com/kenny-hibino/react-places-autocomplete)
-[recompose](https://github.com/acdlite/recompose)
+[react-google-maps](https://github.com/tomchentw/react-google-maps)</br>
+[react-places-autocomplete](https://github.com/kenny-hibino/react-places-autocomplete)</br>
+[recompose](https://github.com/acdlite/recompose)</br>
 
 ## INSTALLATION GUIDE
 
 1. Download directory with applications files.
 2. Unzip downloaded directory.
-3. Put your Google Maps API Key in files: src/App.js and restaurant.html in place YOUR-GOOGLE-MAPS-API-KEY.
+3. Put your Google Maps API Key in files: src/App.js in place YOUR-GOOGLE-MAPS-API-KEY.
 4. Install on directory with applicaion files npm server.
 5. Run in a terminal npm server.
 6. Visit the site: `http://localhost:3000`.
@@ -43,4 +43,4 @@ Wikipedia Api displays short information about choosen place and get link to art
 
 ### LICENSE
 
-The MIT License - See [license.md](https://github.com/hajczek/Neighborhood---Warsaw-Cultural-Map/blob/master/license/license.md)
+The MIT License - See [license.md](https://github.com/hajczek/Neighborhood---Warsaw-Cultural-Map/blob/master/license/License.md)
