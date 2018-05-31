@@ -4,9 +4,9 @@
 import React from 'react'
 import { compose, withState, withStateHandlers } from 'recompose'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
-import MapStyles from './data/MapStyles'
+import MapStyles from './data/MapStyles.json'
 import { geocodeByPlaceId } from 'react-places-autocomplete'
-import { getInfo } from './wikipediaApi'
+import { getInfo } from './wikipediaApi.js'
 
 export const Map = compose(
     withStateHandlers(() => ({

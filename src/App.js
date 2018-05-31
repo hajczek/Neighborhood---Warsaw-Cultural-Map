@@ -2,13 +2,13 @@
   * @description Import needed components
   */
 import React, { Component } from 'react';
-import Map from './Map';
+import Map from './Map.js';
 import './App.css';
-import Places from './Places'
-import Theatres from './data/theatres'
-import Cinemas from './data/cinemas'
-import Museums from './data/museums'
-import Galeries from './data/galeries'
+import Places from './Places.js'
+import Theatres from './data/theatres.json'
+import Cinemas from './data/cinemas.json'
+import Museums from './data/museums.json'
+import Galeries from './data/galeries.json'
 
 /**
   * @description Definitions of variables for data from .json files
