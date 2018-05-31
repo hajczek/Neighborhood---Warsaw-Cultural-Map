@@ -1,3 +1,6 @@
+/**
+  * @description Import needed components
+  */
 import React, { Component } from 'react';
 import Map from './map.js';
 import './App.css';
@@ -7,11 +10,17 @@ import Cinemas from './data/cinemas.json'
 import Museums from './data/museums.json'
 import Galeries from './data/galeries.json'
 
+/**
+  * @description Definitions of variables for data from .json files
+  */
 let theatres = Theatres;
 let cinemas = Cinemas;
 let museums = Museums;
 let galeries = Galeries;
 
+/**
+  * @description Definitions of arrays for data from .json files
+  */
 let markers_all = [];
 let markers_theatres = [];
 let markers_cinemas = [];
@@ -19,15 +28,21 @@ let markers_museums = [];
 let markers_galeries = [];
 
 class App extends Component {
+  /**
+  * @description Set states for applications
+  */
   state = {
         markers: markers_all,
         pageTitle: "Warsaw Cultural Map",
         listTitle: "List of Places",
         activeKey: "",
-        error: "There was an error with making a request for information about this place."
+        error: "There was an error with making a request from Wikipedia."
   };
 
-  toggleLocationsActive = locationKey => {
+  /**
+  * @description Set location for active marker
+  */
+  markerLocationsActive = locationKey => {
     this.setState({
       activeKey: locationKey
     });
@@ -35,6 +50,9 @@ class App extends Component {
 
   componentWillMount() {
 
+    /**
+    * @description Put all elements from .json files to arrays
+    */
     for (let i = 0; i < theatres.length; i++) {
       let marker = theatres[i];
       markers_all.push(marker);
@@ -60,41 +78,62 @@ class App extends Component {
   }
 }
 
+/**
+* @description Shows theatres on map
+*/
 showTheatres = (markers) => {
   this.setState({markers: markers_theatres});
   document.getElementById('panel').style.display = "none";
   document.getElementById('open-menu').style.display = "block";
 } 
 
+/**
+* @description Shows cinemas on map
+*/
 showCinemas = (markers) => {
   this.setState({markers: markers_cinemas});
   document.getElementById('panel').style.display = "none";
   document.getElementById('open-menu').style.display = "block";
 }
 
+/**
+* @description Shows museums on map
+*/
 showMuseums = (markers) => {
   this.setState({markers: markers_museums});
   document.getElementById('panel').style.display = "none";
   document.getElementById('open-menu').style.display = "block";
 }
 
+/**
+* @description Show galeries on map
+*/
 showGaleries = (markers) => {
   this.setState({markers: markers_galeries});
   document.getElementById('panel').style.display = "none";
   document.getElementById('open-menu').style.display = "block";
 }
 
+/**
+* @description Shows all places on map
+*/
 showAll = (markers) => {
   this.setState({markers: markers_all});
   document.getElementById('panel').style.display = "none";
   document.getElementById('open-menu').style.display = "block";
 }
 
+/**
+* @description Open menu
+*/
 openMenu(){
   document.getElementById('panel').style.display = "block";
   document.getElementById('open-menu').style.display = "none";
 }
 
+/**
+* @description Close menu
+*/
 closeMenu(){
   document.getElementById('panel').style.display = "none";
   document.getElementById('open-menu').style.display = "block";
@@ -125,7 +164,7 @@ render() {
                 onShowAll={this.showAll} 
                 markers={this.state.markers}
                 closeMenu={this.closeMenu}
-                toggleLocationsActive={this.toggleLocationsActive}
+                markerLocationsActive={this.markerLocationsActive}
                 hideError={this.hideError}
               />
           </div>
@@ -137,7 +176,7 @@ render() {
         {(navigator.onLine)&&(
           <Map
             activeKey={this.state.activeKey}
-            toggleLocationsActive={this.toggleLocationsActive}
+            markerLocationsActive={this.markerLocationsActive}
             isMarkerShown
             onShowTheatres={this.showTheatres}
             onShowCinemas={this.showCinemas}

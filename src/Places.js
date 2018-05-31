@@ -1,3 +1,6 @@
+/**
+  * @description Import needed components
+  */
 import React, { Component } from 'react'
 import { getInfo } from './wikipediaApi.js'
 
@@ -6,9 +9,13 @@ class Places extends Component {
     render(){
         return(
             <ol id="list-of-places">
-                {this.props.markers.map((marker, i) => (                    
+                {this.props.markers.map((marker, i) => (
+                    /**
+                     * @description Display on the map information about the place whose name was clicked and close menu.
+                     */                    
                     <li tabIndex="0" key={i} onClick={() => {
-                        this.props.toggleLocationsActive(i);
+                        this.props.markerLocationsActive(i);
+                        this.props.closeMenu();
                         getInfo(marker.title);
                     }}>{ marker.title } »</li>
                 ))}
