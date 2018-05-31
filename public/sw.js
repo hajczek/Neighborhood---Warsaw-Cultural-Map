@@ -1,6 +1,7 @@
 /**
-* @description Code for Service Worker 
-*/
+ * 
+ * 
+ */
 
 // Cache name
 let cacheMap = 'cacheMap-1';
@@ -28,9 +29,7 @@ let cacheFiles = [
   'manifest.json',
 ]
 
-/**
-* @description Installation Service worker 
-*/
+// Installation Service worker
 self.addEventListener('install', e => {
   e.waitUntil(
       caches.open(cacheMap).then(cache => {
@@ -41,11 +40,7 @@ self.addEventListener('install', e => {
   );
 });
 
-/**
-* @description Activation Service worker 
-*//**
-* @description Activation Service worker 
-*/
+// Activation Service worker
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys()
     .then(cacheNames => Promise.all(
@@ -54,9 +49,7 @@ self.addEventListener('activate', e => {
     .map(cacheName => caches.delete(cacheName)))))
 });
 
-/**
-* @description Fetching Service worker 
-*/
+// Fetch Service worker
 self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request)

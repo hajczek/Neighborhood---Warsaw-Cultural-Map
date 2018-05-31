@@ -1,17 +1,10 @@
-/**
-  * @description Get data from Wikipedia Api
-  */
-
 export const getInfo = (search) => {
   fetch("https://pl.wikipedia.org/w/api.php?&origin=*&action=opensearch&search=" + search + "&limit=1", 
         { headers: {'Accept': 'application/json'},
-        }).then(response => response.json()).then(setInfo).catch(e => displayError(e));
+        }).then(response => response.json()).then(addInfo).catch(e => requestError(e));
   }
 
-  /**
-  * @description Set data from Wikipedia Api in InfoWindow
-  */
-  const setInfo = (data) => {
+  const addInfo = (data) => {
     const link = data[3][0];
     const art = data[2][0];
     if (link || art) {
@@ -24,11 +17,8 @@ export const getInfo = (search) => {
       document.querySelector('#info').innerHTML = 'Unfortunately, no info was returned for this place.';
       }
     }
-
-    /**
-    * @description Display information when error occure
-    */
-    const displayError = (e) => {
+    
+    const requestError = (e) => {
       let infoBox = document.getElementById('info-box');
       infoBox.setAttribute('class', 'show');
       setTimeout(function(){ infoBox.setAttribute('class', 'hide') }, 3000);
