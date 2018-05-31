@@ -184,7 +184,7 @@ render() {
             onShowGaleries={this.showGaleries}
             onShowAll={this.showAll}
             markers={this.state.markers}
-            googleMapURL="https://maps.googleapis.com/maps/api/js?libraries=places&key=YOUR-GOOGLE-MAPS-API-KEY"
+            googleMapURL="https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing,places&key=YOUR-GOOGLE-MAPS-API-KEY"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100%` }} />}
             mapElement={<div style={{ height: `100%` }} />}
