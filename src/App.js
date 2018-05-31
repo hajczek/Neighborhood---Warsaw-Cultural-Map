@@ -2,7 +2,7 @@
   * @description Import needed components
   */
 import React, { Component } from 'react';
-import Map from './Map.js';
+import Map from './map.js';
 import './App.css';
 import Places from './Places.js'
 import Theatres from './data/theatres.json'
