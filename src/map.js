@@ -47,11 +47,10 @@ export const Map = compose(
                 .catch(error => console.error(error))
             }}
             >
-            {i === props.activeKey && (
-                
-            <InfoWindow onCloseClick={props.onToggleOpen}>
-                    <span tabIndex="0" id="title">{ marker.title }</span>
-            </InfoWindow>)}
+            {i === props.activeKey && (                
+                <InfoWindow onCloseClick={props.onToggleOpen}>
+                    <p tabIndex="0" id="title">{ marker.title }</p>
+                </InfoWindow>)}
         </Marker>
     );}
     )}

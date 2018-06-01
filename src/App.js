@@ -58,7 +58,7 @@ class App extends Component {
       activeKey: locationKey
     });
   };
-  
+
   /**
   * @description Shows theatres on map
   */
@@ -112,18 +112,18 @@ class App extends Component {
   /**
    * @description Open menu
    */
-    openMenu = () => {
-      document.getElementById('panel').style.display = "block";
-      document.getElementById('open-menu').style.display = "none";
-    }
+  openMenu = () => {
+    document.getElementById('panel').style.display = "block";
+    document.getElementById('open-menu').style.display = "none";
+  }
 
   /**
     * @description Close menu
     */
-    closeMenu = () => {
-      document.getElementById('panel').style.display = "none";
-      document.getElementById('open-menu').style.display = "block";
-    }
+  closeMenu = () => {
+    document.getElementById('panel').style.display = "none";
+    document.getElementById('open-menu').style.display = "block";
+  }
 
   componentWillMount() {
 

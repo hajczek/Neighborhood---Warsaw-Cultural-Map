@@ -3,8 +3,11 @@
   */
 export const getInfo = (search) => {
   fetch("https://pl.wikipedia.org/w/api.php?&origin=*&action=opensearch&search=" + search + "&limit=1", 
-        { headers: {'Accept': 'application/json'},
-        }).then(response => response.json()).then(addInfo).catch(e => requestError(e));
+        { headers: 
+          {'Accept': 'application/json'},
+        }).then(response => response.json())
+          .then(addInfo)
+          .catch(e => requestError(e));
   }
 
   /**
