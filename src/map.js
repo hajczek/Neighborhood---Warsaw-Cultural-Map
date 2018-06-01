@@ -39,26 +39,18 @@ export const Map = compose(
             onClick={() => {
                 props.markerLocationsActive(i);
                 getInfo(marker.title);
-            }}
-            >
-            {i === props.activeKey && (
                 geocodeByPlaceId(marker.place_id)
                 .then(results => {
                     const address = results[0].formatted_address;
-                    document.getElementById('address').innerHTML  += address;
+                    document.getElementById('address').innerHTML = 'Address: ' + address;
                 })
-                .catch(error => console.error(error)),
+                .catch(error => console.error(error))
+            }}
+            >
+            {i === props.activeKey && (
+                
             <InfoWindow onCloseClick={props.onToggleOpen}>
-                <div id="info-window">
                     <span tabIndex="0" id="title">{ marker.title }</span>
-                    <br/><br/>
-                    <span tabIndex="0" id="address-title">Address:</span>
-                    <br/>
-                    <span tabIndex="0" id="address"></span>
-                    <br/><br/>
-                    <span tabIndex="0" id="short-article"></span>
-                    <a tabIndex="0" target="blank" id="results"></a><br/>
-                </div>
             </InfoWindow>)}
         </Marker>
     );}
