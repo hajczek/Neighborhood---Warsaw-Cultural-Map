@@ -1,10 +1,11 @@
 /**
   * @description Import needed components
   */
-import React, { Component } from 'react';
-import Map from './map.js';
-import './App.css';
+import React, { Component } from 'react'
+import Map from './map.js'
+import './App.css'
 import Places from './Places.js'
+import Menu from './Menu.js'
 import Theatres from './data/theatres.json'
 import Cinemas from './data/cinemas.json'
 import Museums from './data/museums.json'
@@ -33,6 +34,11 @@ class App extends Component {
   */
   state = {
         markers: markers_all,
+        markers_theatres: markers_theatres,
+        markers_cinemas: markers_cinemas,
+        markers_museums: markers_museums,
+        markers_galeries: markers_galeries,
+        markers_all: markers_all,
         pageTitle: "Warsaw Cultural Map",
         listTitle: "List of Places",
         activeKey: "",
@@ -47,6 +53,22 @@ class App extends Component {
       activeKey: locationKey
     });
   };
+
+  /**
+   * @description Open menu
+   */
+    openMenu = () => {
+      document.getElementById('panel').style.display = "block";
+      document.getElementById('open-menu').style.display = "none";
+    }
+
+  /**
+    * @description Close menu
+    */
+    closeMenu = () => {
+      document.getElementById('panel').style.display = "none";
+      document.getElementById('open-menu').style.display = "block";
+    }
 
   componentWillMount() {
 
@@ -78,67 +100,6 @@ class App extends Component {
   }
 }
 
-/**
-* @description Shows theatres on map
-*/
-showTheatres = (markers) => {
-  this.setState({markers: markers_theatres});
-  document.getElementById('panel').style.display = "none";
-  document.getElementById('open-menu').style.display = "block";
-} 
-
-/**
-* @description Shows cinemas on map
-*/
-showCinemas = (markers) => {
-  this.setState({markers: markers_cinemas});
-  document.getElementById('panel').style.display = "none";
-  document.getElementById('open-menu').style.display = "block";
-}
-
-/**
-* @description Shows museums on map
-*/
-showMuseums = (markers) => {
-  this.setState({markers: markers_museums});
-  document.getElementById('panel').style.display = "none";
-  document.getElementById('open-menu').style.display = "block";
-}
-
-/**
-* @description Show galeries on map
-*/
-showGaleries = (markers) => {
-  this.setState({markers: markers_galeries});
-  document.getElementById('panel').style.display = "none";
-  document.getElementById('open-menu').style.display = "block";
-}
-
-/**
-* @description Shows all places on map
-*/
-showAll = (markers) => {
-  this.setState({markers: markers_all});
-  document.getElementById('panel').style.display = "none";
-  document.getElementById('open-menu').style.display = "block";
-}
-
-/**
-* @description Open menu
-*/
-openMenu(){
-  document.getElementById('panel').style.display = "block";
-  document.getElementById('open-menu').style.display = "none";
-}
-
-/**
-* @description Close menu
-*/
-closeMenu(){
-  document.getElementById('panel').style.display = "none";
-  document.getElementById('open-menu').style.display = "block";
-}
-
 render() {
 
   return (
@@ -147,13 +108,13 @@ render() {
         <div id="panel">
           <button id="close-menu" onClick={() => this.closeMenu()}>x</button>
           <h1 tabIndex="0">{this.state.pageTitle}</h1>
-          <div className="options-box">
-            <button tabIndex="0" onClick={() => this.showTheatres()} id="show-theatres"><img alt="Theatre symbol" src="http://www.serwisstron.pl/icons/theatre.png" /><span className="textBtn">Theatres</span></button>
-            <button tabIndex="0" onClick={() => this.showCinemas()} id="show-cinemas"><img alt="Cinema symbol" src="http://www.serwisstron.pl/icons/cinema.png" /><span className="textBtn">Cinemas</span></button>
-            <button tabIndex="0" onClick={() => this.showMuseums()} id="show-museums"><img alt="Museum symbol" src="http://www.serwisstron.pl/icons/museum.png" /><span className="textBtn">Museums</span></button>
-            <button tabIndex="0" onClick={() => this.showGaleries()} id="show-galeries"><img alt="Gallery symbol" src="http://www.serwisstron.pl/icons/galeria.png" /><span className="textBtn">Galeries</span></button>
-            <button tabIndex="0" onClick={() => this.showAll()} id="show-all"><span className="textBtn">Show All Places</span></button>
-          </div>
+          <Menu 
+          markers={this.state.markers}
+          markers_theatres={this.state.markers_theatres}
+          markers_cinemsa={this.state.markers_cinemas}
+          markers_museums={this.state.markers_museums}
+          markers_galeries={this.state.markers_galeries}          
+          />
           <div id="list-of-localisations">
             <h2 tabIndex="0">{this.state.listTitle}</h2>
               <Places 
@@ -184,7 +145,7 @@ render() {
             onShowGaleries={this.showGaleries}
             onShowAll={this.showAll}
             markers={this.state.markers}
-            googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=places&key=YOUR-GOOGLE-MAPS-API-KEY"
+            googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBqtLvddq3jzZ_Lnu9M8266EMVBfXtlUT4"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100%` }} />}
             mapElement={<div style={{ height: `100%` }} />}
