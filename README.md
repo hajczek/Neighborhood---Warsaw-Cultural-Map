@@ -22,9 +22,8 @@ Wikipedia Api displays short information about choosen place and give a link to 
 1. Download directory with applications files.
 2. Unzip downloaded directory.
 3. Put your Google Maps API Key in files: src/App.js in place YOUR-GOOGLE-MAPS-API-KEY.
-4. Install on directory with applicaion files npm server.
-5. Install components listed in section 'REACT COMPONENTS USES'
-5. Run in a terminal npm server.
+4. Install npm server on directory with applicaion files.
+5. Run in a terminal npm server command: `npm start`.
 6. Visit the site: `http://localhost:3000`.
 7. Now you can use Warsaw Cultural Map!
 

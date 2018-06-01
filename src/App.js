@@ -189,7 +189,7 @@ render() {
             resetInfoBox={this.resetInfoBox}
             isMarkerShown
             markers={this.state.markers}
-            googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBqtLvddq3jzZ_Lnu9M8266EMVBfXtlUT4"
+            googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=places&key=YOUR-GOOGLE-MAPS-API-KEY"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `85%` }} />}
             mapElement={<div style={{ height: `100%` }} />}
