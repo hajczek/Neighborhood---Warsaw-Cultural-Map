@@ -139,11 +139,6 @@ render() {
             activeKey={this.state.activeKey}
             markerLocationsActive={this.markerLocationsActive}
             isMarkerShown
-            onShowTheatres={this.showTheatres}
-            onShowCinemas={this.showCinemas}
-            onShowMuseums={this.showMuseums}
-            onShowGaleries={this.showGaleries}
-            onShowAll={this.showAll}
             markers={this.state.markers}
             googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBqtLvddq3jzZ_Lnu9M8266EMVBfXtlUT4"
             loadingElement={<div style={{ height: `100%` }} />}
