@@ -7,6 +7,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'reac
 import MapStyles from './data/MapStyles'
 import { geocodeByPlaceId } from 'react-places-autocomplete'
 import { getInfo } from './wikipediaApi.js'
+import { resetInfoBox } from './resetInfoBox.js'
 
 export const Map = compose(
     withStateHandlers(() => ({
@@ -38,6 +39,7 @@ export const Map = compose(
             animation={window.google.maps.Animation.DROP}
             onClick={() => {
                 props.markerLocationsActive(i);
+                resetInfoBox();
                 getInfo(marker.title);
                 geocodeByPlaceId(marker.place_id)
                 .then(results => {

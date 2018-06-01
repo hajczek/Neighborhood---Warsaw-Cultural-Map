@@ -4,11 +4,14 @@
 import React, { Component } from 'react'
 import Map from './map.js'
 import './App.css'
+import Menu from './Menu.js'
 import Places from './Places.js'
+import InformationBox from './informationBox.js'
 import Theatres from './data/theatres.json'
 import Cinemas from './data/cinemas.json'
 import Museums from './data/museums.json'
 import Galeries from './data/galeries.json'
+import { resetInfoBox } from './resetInfoBox.js'
 
 /**
   * @description Definitions of variables for data from .json files
@@ -26,17 +29,6 @@ let markers_theatres = [];
 let markers_cinemas = [];
 let markers_museums = [];
 let markers_galeries = [];
-
-/**
-  * @description Clear box with information about chosen place
-  */
-const resetInfoBox = () => {  
-  document.querySelector('#results').removeAttribute("href");
-  document.querySelector('#results').removeAttribute("alt");
-  document.querySelector('#results').innerHTML = '';
-  document.querySelector('#short-article').innerHTML = '';
-  document.getElementById('address').innerHTML = ''
-}
 
 class App extends Component {
   /**
@@ -130,13 +122,14 @@ class App extends Component {
     /**
     * @description Put all elements from .json files to arrays
     */
+
     for (let i = 0; i < theatres.length; i++) {
       let marker = theatres[i];
       markers_all.push(marker);
       markers_theatres.push(marker);
     }
 
-    for (let i = 0; i < cinemas.length; i++) {
+   for (let i = 0; i < cinemas.length; i++) {
       let marker = cinemas[i];
       markers_all.push(marker);
       markers_cinemas.push(marker)
@@ -163,13 +156,13 @@ render() {
         <div id="panel">
           <button id="close-menu" onClick={() => this.closeMenu()}>x</button>
           <h1 tabIndex="0">{this.state.pageTitle}</h1>
-          <div className="options-box">
-                <button tabIndex="0" onClick={() => this.showTheatres()} id="show-theatres"><img alt="Theatre symbol" src="http://www.serwisstron.pl/icons/theatre.png" /><span className="textBtn">Theatres</span></button>
-                <button tabIndex="0" onClick={() => this.showCinemas()} id="show-cinemas"><img alt="Cinema symbol" src="http://www.serwisstron.pl/icons/cinema.png" /><span className="textBtn">Cinemas</span></button>
-                <button tabIndex="0" onClick={() => this.showMuseums()} id="show-museums"><img alt="Museum symbol" src="http://www.serwisstron.pl/icons/museum.png" /><span className="textBtn">Museums</span></button>
-                <button tabIndex="0" onClick={() => this.showGaleries()} id="show-galeries"><img alt="Gallery symbol" src="http://www.serwisstron.pl/icons/galeria.png" /><span className="textBtn">Galeries</span></button>
-                <button tabIndex="0" onClick={() => this.showAll()} id="show-all"><span className="textBtn">Show All Places</span></button>
-            </div>
+          <Menu 
+            showTheatres={this.showTheatres}
+            showMuseums={this.showMuseums}
+            showGaleries={this.showGaleries}
+            showCinemas={this.showCinemas}
+            showAll={this.showAll}
+          />
           <div id="list-of-localisations">
             <h2 tabIndex="0">{this.state.listTitle}</h2>
               <Places 
@@ -185,27 +178,23 @@ render() {
               />
           </div>
         </div>
-        <div id="info-place">
-          <h3 tabIndex="0" id="info-title">Informations about chosen place:</h3>
-          <p tabIndex="0" id="address"></p>
-          <p tabIndex="0" id="short-article"></p>
-          <a tabIndex="0" target="blank" id="results"></a>
-        </div>
         <div id="info-box">
-            <span tabIndex="0" id="next">{ this.state.error }</span>
+          <p tabIndex="0" id="next">{ this.state.error }</p>
         </div>
         <div id="map">
         {(navigator.onLine)&&(
           <Map
             activeKey={this.state.activeKey}
             markerLocationsActive={this.markerLocationsActive}
+            resetInfoBox={this.resetInfoBox}
             isMarkerShown
             markers={this.state.markers}
             googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBqtLvddq3jzZ_Lnu9M8266EMVBfXtlUT4"
             loadingElement={<div style={{ height: `100%` }} />}
-            containerElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `85%` }} />}
             mapElement={<div style={{ height: `100%` }} />}
-            />)}
+            />
+            )}
             {(!navigator.onLine)&&(
               <div id="container-offline">
                 <div id="info-offline">
@@ -216,6 +205,7 @@ render() {
               </div>
             )}
         </div>
+        <InformationBox />
       </div>
     )
   }

@@ -3,6 +3,7 @@ html, body {
   margin: 0; 
   padding: 0;
   font-size: 16px;
+  background-color: #eee;
 }
 
 #panel {
@@ -104,7 +105,7 @@ h3 {
 
 #list-of-places {
   width: 230px;
-  height: 320px;
+  height: 280px;
   overflow-y: scroll;
   margin-left: 10px;
   scroll-behavior: auto;
@@ -144,7 +145,7 @@ h3 {
 
 .gm-style-iw {
   border-radius: 2px 2px 0 0;
-  padding: 5px;
+  width: 200px !important;
 }
 
 #title {
@@ -188,6 +189,11 @@ h3 {
 #info {
   color: #ff0000;
   padding: 5px;
+  display: block;
+  float: left;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .textBtn {
@@ -251,8 +257,10 @@ h3 {
   z-index: 10;
   font-size: 0.9em;
   padding: 10px;
-  background-color:#fff;
+  background-color:#eee;
   color:#000;
+  height: 15%;
+  overflow-y: scroll;
 }
 
 @media (max-width:767px) {

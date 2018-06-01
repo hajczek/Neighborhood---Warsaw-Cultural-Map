@@ -16,7 +16,6 @@
  {"title": "Multikino - Janki", "location": {"lat": 52.136342, "lng":20.891873}, "place_id": "ChIJSeDg8gY0GUcRPEl2sSAjuvs", "type": "cinema"},
  {"title": "Kino Elektronik - MCKM w Warszawie", "location": {"lat": 52.261066, "lng":20.992062}, "place_id": "ChIJt4J4BovLHkcRInMAmK3XkH4", "type": "cinema"},
  {"title": "Kino Luna w Warszawie", "location": {"lat": 52.218716, "lng":21.019039}, "place_id": "ChIJe3sZYubMHkcRZa0OOBesH-k", "type": "cinema"},
- {"title": "U-Jazdowski w Warszawie", "location": {"lat": 52.219695, "lng":21.031018}, "place_id": "ChIJ2TceUuLMHkcRrQZ5A9iqpR0", "type": "cinema"},
  {"title": "Kinoteka w Warszawie", "location": {"lat": 52.231246, "lng":21.006487}, "place_id": "ChIJsaxq1ozMHkcR3eCCfLpqqNg", "type": "cinema"},
  {"title": "Kino Iluzjon w Warszawie", "location": {"lat": 52.205648, "lng":21.010776}, "place_id": "ChIJnS-z1MPMHkcRwZ3IlMzLM8Q", "type": "cinema"}
   ]
