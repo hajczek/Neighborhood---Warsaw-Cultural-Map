@@ -10,7 +10,7 @@
             /**
              * @description Display menu buttons on page
              */
-            <div className="options-box">
+            <nav>
                 <button tabIndex="0" onClick={() => this.props.showTheatres()} id="show-theatres">
                     <img alt="Theatre symbol" src="http://www.serwisstron.pl/icons/theatre.png" />
                     <span className="textBtn">Theatres</span>
@@ -30,7 +30,7 @@
                 <button tabIndex="0" onClick={() => this.props.showAll()} id="show-all">
                     <span className="textBtn">Show All Places</span>
                 </button>
-            </div>
+            </nav>
          )
      }
  }

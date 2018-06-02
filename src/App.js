@@ -151,62 +151,62 @@ class App extends Component {
 render() {
 
   return (
-      <div className="container">
-        <button id="open-menu" onClick={() => this.openMenu()}>Open map menu</button>
-        <div id="panel">
-          <button id="close-menu" onClick={() => this.closeMenu()}>x</button>
-          <h1 tabIndex="0">{this.state.pageTitle}</h1>
-          <Menu 
-            showTheatres={this.showTheatres}
-            showMuseums={this.showMuseums}
-            showGaleries={this.showGaleries}
-            showCinemas={this.showCinemas}
-            showAll={this.showAll}
-          />
-          <div id="list-of-localisations">
-            <h2 tabIndex="0">{this.state.listTitle}</h2>
-              <Places 
-                onShowTheatres={this.showTheatres} 
-                onShowCinemas={this.showCinemas}
-                onShowMuseums={this.showMuseums}
-                onShowGaleries={this.showGaleries}
-                onShowAll={this.showAll} 
-                markers={this.state.markers}
-                closeMenu={this.closeMenu}
-                markerLocationsActive={this.markerLocationsActive}
-                hideError={this.hideError}
-              />
-          </div>
-        </div>
-        <div id="info-box">
-          <p tabIndex="0" id="next">{ this.state.error }</p>
-        </div>
-        <div id="map">
-        {(navigator.onLine)&&(
-          <Map
-            activeKey={this.state.activeKey}
-            markerLocationsActive={this.markerLocationsActive}
-            resetInfoBox={this.resetInfoBox}
-            isMarkerShown
-            markers={this.state.markers}
-            googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=places&key=YOUR-GOOGLE-MAPS-API-KEY"
-            loadingElement={<div style={{ height: `100%` }} />}
-            containerElement={<div style={{ height: `85%` }} />}
-            mapElement={<div style={{ height: `100%` }} />}
+        <main className="container">
+          <button id="open-menu" onClick={() => this.openMenu()}>Open map menu</button>
+          <section id="panel">
+            <button aria-label="Close" id="close-menu" onClick={() => this.closeMenu()}>x</button>
+            <h1 tabIndex="0">{this.state.pageTitle}</h1>
+            <Menu 
+              showTheatres={this.showTheatres}
+              showMuseums={this.showMuseums}
+              showGaleries={this.showGaleries}
+              showCinemas={this.showCinemas}
+              showAll={this.showAll}
             />
-            )}
-            {(!navigator.onLine)&&(
-              <div id="container-offline">
-                <div id="info-offline">
-                  <h3>You are offline ...</h3>
-                    <p>You can see list for cultural places in Warsaw.<br/>
-                    For this click button 'Open map menu'.</p>
-                </div>
-              </div>
-            )}
-        </div>
-        <InformationBox />
-      </div>
+            <section id="list-of-localisations">
+              <h2 tabIndex="0">{this.state.listTitle}</h2>
+                <Places 
+                  onShowTheatres={this.showTheatres} 
+                  onShowCinemas={this.showCinemas}
+                  onShowMuseums={this.showMuseums}
+                  onShowGaleries={this.showGaleries}
+                  onShowAll={this.showAll} 
+                  markers={this.state.markers}
+                  closeMenu={this.closeMenu}
+                  markerLocationsActive={this.markerLocationsActive}
+                  hideError={this.hideError}
+                />
+            </section>
+          </section>
+          <mark id="info-box">
+            <p tabIndex="0" id="next">{ this.state.error }</p>
+          </mark>
+          <div id="map">
+          {(navigator.onLine)&&(
+            <Map
+              activeKey={this.state.activeKey}
+              markerLocationsActive={this.markerLocationsActive}
+              resetInfoBox={this.resetInfoBox}
+              isMarkerShown
+              markers={this.state.markers}
+              googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBqtLvddq3jzZ_Lnu9M8266EMVBfXtlUT4"
+              loadingElement={<div style={{ height: `100%` }} />}
+              containerElement={<div style={{ height: `85%` }} />}
+              mapElement={<div style={{ height: `100%` }} />}
+              />
+              )}
+              {(!navigator.onLine)&&(
+                <section id="container-offline">
+                  <div id="info-offline">
+                    <h3 tabIndex="0">You are offline ...</h3>
+                      <p>You can see list for cultural places in Warsaw.<br/>
+                      For this click button 'Open map menu'.</p>
+                  </div>
+                </section>
+              )}
+          </div>
+          <InformationBox />
+      </main>
     )
   }
 }

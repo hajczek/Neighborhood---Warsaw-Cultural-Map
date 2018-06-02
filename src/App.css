@@ -48,17 +48,17 @@ html, body {
   color:#222;
 }
 
-.options-box {
+nav {
   background: #fff;
   border-radius: 3px;
   height: 100%;
   line-height: 35px;
-  padding: 10px 10px 10px 20px;
+  padding: 10px 10px 0 20px;
   text-align: left;
   width: 260px;
 }
 
-.options-box button {
+nav button {
   display: block;
   float: left;
   width: 120px;
@@ -68,7 +68,7 @@ html, body {
   cursor: pointer;
 }
 
-.options-box button:hover {
+nav button:hover {
   background-color:#fefefe;
 }
 
@@ -84,7 +84,7 @@ html, body {
 
 #show-all {
   width: 250px;
-  margin: 10px 0 20px 0;
+  margin: 10px 0 5px 0;
   padding: 10px 0;
 }
 
@@ -250,7 +250,7 @@ h3 {
   display: none !important;
 }
 
-#info-place {
+#det {
   position: absolute;
   bottom: 0;
   width: 100%;
