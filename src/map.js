@@ -29,8 +29,8 @@ export const Map = compose(
         defaultOptions={{ styles: MapStyles }}
         mapTypeControl={false}
     >{ props.isMarkerShown && props.markers.map((marker, i) => {
-        let markerImage='http://www.serwisstron.pl/icons/'
-        if (i === props.activeKey) markerImage='http://www.serwisstron.pl/icons/yellow/'
+        let markerImage='http://www.serwisstron.pl/Icons/'
+        if (i === props.activeKey) markerImage='http://www.serwisstron.pl/Icons/yellow/'
         return ( 
         <Marker
             {...marker}

@@ -7,6 +7,7 @@ import './App.css'
 import Menu from './Menu.js'
 import Places from './Places.js'
 import InformationBox from './informationBox.js'
+import Footer from './Footer.js'
 import Theatres from './data/theatres.json'
 import Cinemas from './data/cinemas.json'
 import Museums from './data/museums.json'
@@ -185,10 +186,8 @@ render() {
           {(navigator.onLine)&&(
             <Map
               activeKey={this.state.activeKey}
-              image={this.state.image}
               markerLocationsActive={this.markerLocationsActive}
               resetInfoBox={this.resetInfoBox}
-              onMarkerClick={this.onMarkerClick}
               isMarkerShown
               markers={this.state.markers}
               googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBqtLvddq3jzZ_Lnu9M8266EMVBfXtlUT4"
@@ -208,6 +207,7 @@ render() {
               )}
           </div>
           <InformationBox />
+          <Footer />
       </main>
     )
   }
