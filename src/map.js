@@ -29,19 +29,20 @@ export const Map = compose(
         defaultOptions={{ styles: MapStyles }}
         mapTypeControl={false}
     >{ props.isMarkerShown && props.markers.map((marker, i) => {
+        let markerImage='http://www.serwisstron.pl/icons/'
+        if (i === props.activeKey) markerImage='http://www.serwisstron.pl/icons/yellow/'
         return ( 
         <Marker
             {...marker}
             key={i}
             position={marker.location}
             title={marker.title}
-            icon={props.image + marker.type + '.png'}
+            icon={markerImage + marker.type + '.png'}
             animation={window.google.maps.Animation.DROP}
             onClick={() => {
                 props.markerLocationsActive(i)
                 resetInfoBox()
                 getInfo(marker.title)
-                props.onMarkerClick(i)
                 geocodeByPlaceId(marker.place_id)
                 .then(results => {
                     const address = results[0].formatted_address;

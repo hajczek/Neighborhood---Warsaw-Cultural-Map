@@ -39,8 +39,7 @@ class App extends Component {
         pageTitle: "Warsaw Cultural Map",
         listTitle: "List of Places",
         activeKey: "",
-        error: "There was an error with making a request from Wikipedia.",
-        image: "http://www.serwisstron.pl/icons/",
+        error: "There was an error with making a request from Wikipedia."
   };
 
   /**
@@ -51,10 +50,6 @@ class App extends Component {
       activeKey: locationKey
     });
   };
-
-  onMarkerClick = () => {
-    this.setState({image: 'http://www.serwisstron.pl/icons/yellow/'})
-  }
 
   /**
   * @description Shows theatres on map
