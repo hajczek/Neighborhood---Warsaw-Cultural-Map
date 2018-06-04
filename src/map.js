@@ -35,12 +35,13 @@ export const Map = compose(
             key={i}
             position={marker.location}
             title={marker.title}
-            icon={'http://www.serwisstron.pl/icons/' + marker.type + '.png'}
+            icon={props.image + marker.type + '.png'}
             animation={window.google.maps.Animation.DROP}
             onClick={() => {
-                props.markerLocationsActive(i);
-                resetInfoBox();
-                getInfo(marker.title);
+                props.markerLocationsActive(i)
+                resetInfoBox()
+                getInfo(marker.title)
+                props.onMarkerClick(i)
                 geocodeByPlaceId(marker.place_id)
                 .then(results => {
                     const address = results[0].formatted_address;
@@ -49,7 +50,7 @@ export const Map = compose(
                 .catch(error => console.error(error))
             }}
             >
-            {i === props.activeKey && (                
+            {i === props.activeKey && (
                 <InfoWindow onCloseClick={props.onToggleOpen}>
                     <p tabIndex="0" id="title">{ marker.title }</p>
                 </InfoWindow>)}

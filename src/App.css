@@ -263,6 +263,10 @@ h3 {
   overflow-y: scroll;
 }
 
+img[src='http://www.serwisstron.pl/icons/theatre.png']:hover{
+  border: 1px solid red;
+}
+
 @media (max-width:767px) {
   #open-menu {
     left: 120px;
