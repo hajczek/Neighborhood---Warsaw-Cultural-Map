@@ -192,7 +192,7 @@ render() {
               markers={this.state.markers}
               googleMapURL="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBqtLvddq3jzZ_Lnu9M8266EMVBfXtlUT4"
               loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `85%` }} />}
+              containerElement={<div style={{ height: `80%` }} />}
               mapElement={<div style={{ height: `100%` }} />}
               />
               )}
