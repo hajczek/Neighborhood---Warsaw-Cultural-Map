@@ -37,6 +37,10 @@ Wikipedia Api displays short information about choosen place and give a link to 
 
 1.0
 
+### LINK
+
+[See Warsaw Cultural Map online »](https://hajczek.github.io/Neighborhood---Warsaw-Cultural-Map/)
+
 ### LICENSE
 
 The MIT License - See [license.md](https://github.com/hajczek/Neighborhood---Warsaw-Cultural-Map/blob/master/license/License.md)
