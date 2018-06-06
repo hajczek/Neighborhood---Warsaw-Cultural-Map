@@ -2,6 +2,7 @@
   "name": "warsaw-cultural-map",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hajczek.github.io/Neighborhood---Warsaw-Cultural-Map",
   "dependencies": {
     "fetch": "^1.1.0",
     "react": "^16.3.2",
