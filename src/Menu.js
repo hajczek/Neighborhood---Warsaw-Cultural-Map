@@ -12,19 +12,19 @@
              */
             <nav>
                 <button tabIndex="0" onClick={() => this.props.showTheatres()} id="show-theatres">
-                    <img alt="Theatre symbol" src="http://www.serwisstron.pl/icons/theatre.png" />
+                    <img alt="Theatre symbol" src="https://github.com/hajczek/Neighborhood---Warsaw-Cultural-Map/blob/master/src/icons/theatre.png" />
                     <span className="textBtn">Theatres</span>
                 </button>
                 <button tabIndex="0" onClick={() => this.props.showCinemas()} id="show-cinemas">
-                    <img alt="Cinema symbol" src="http://www.serwisstron.pl/icons/cinema.png" />
+                    <img alt="Cinema symbol" src="https://github.com/hajczek/Neighborhood---Warsaw-Cultural-Map/blob/master/src/icons/cinema.png" />
                     <span className="textBtn">Cinemas</span>
                 </button>
                 <button tabIndex="0" onClick={() => this.props.showMuseums()} id="show-museums">
-                    <img alt="Museum symbol" src="http://www.serwisstron.pl/icons/museum.png" />
+                    <img alt="Museum symbol" src="https://github.com/hajczek/Neighborhood---Warsaw-Cultural-Map/blob/master/src/icons/museum.png" />
                     <span className="textBtn">Museums</span>
                 </button>
                 <button tabIndex="0" onClick={() => this.props.showGaleries()} id="show-galeries">
-                    <img alt="Gallery symbol" src="http://www.serwisstron.pl/icons/galeria.png" />
+                    <img alt="Gallery symbol" src="https://github.com/hajczek/Neighborhood---Warsaw-Cultural-Map/blob/master/src/icons/galeria.png" />
                     <span className="textBtn">Galeries</span>
                 </button>
                 <button tabIndex="0" onClick={() => this.props.showAll()} id="show-all">
