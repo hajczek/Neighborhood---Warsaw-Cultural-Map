@@ -39,7 +39,7 @@ Wikipedia Api displays short information about choosen place and give a link to 
 
 ### LINK
 
-[See project 'Warsaw Cultural Map' online »](https://hajczek.github.io/Neighborhood---Warsaw-Cultural-Map/)
+[See project 'Warsaw Cultural Map' online »](https://hajczek.github.io/Neighborhood-Warsaw-Cultural-Map/)
 
 ### LICENSE
 
