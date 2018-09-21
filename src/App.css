@@ -18,12 +18,12 @@ html, body {
 
 #open-menu {
   position: absolute;
-  top:11px;
+  top:10px;
   left: 180px;
   z-index: 10;
   background-color:#000;
-  padding: 12px 11px 14px 11px;
-  font-size: 0.8em;
+  padding: 12px 11px 11px 11px;
+  font-size: 1em;
   color:#fff;
   cursor: pointer;
   border: none;
@@ -284,7 +284,7 @@ footer p {
 
 @media (max-width:767px) {
   #open-menu {
-    left: 120px;
+    left: 200px;
     padding: 10px;
   }
 }
