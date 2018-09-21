@@ -4,7 +4,7 @@
 import React from 'react'
 import { compose, withState, withStateHandlers } from 'recompose'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
-import MapStyles from './data/MapStyles'
+import MapStyles from '../data/MapStyles'
 import { geocodeByPlaceId } from 'react-places-autocomplete'
 import { getInfo } from './wikipediaApi.js'
 import { resetInfoBox } from './resetInfoBox.js'

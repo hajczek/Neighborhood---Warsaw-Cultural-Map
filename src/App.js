@@ -2,17 +2,17 @@
   * @description Import needed components
   */
 import React, { Component } from 'react'
-import Map from './map.js'
+import Map from './components/map.js'
 import './css/App.css'
-import Menu from './Menu.js'
-import Places from './Places.js'
+import Menu from './components/Menu.js'
+import Places from './components/Places.js'
 import InformationBox from './components/informationBox.js'
 import Footer from './components/Footer.js'
 import Theatres from './data/theatres.json'
 import Cinemas from './data/cinemas.json'
 import Museums from './data/museums.json'
 import Galeries from './data/galeries.json'
-import { resetInfoBox } from './resetInfoBox.js'
+import { resetInfoBox } from './components/resetInfoBox.js'
 
 /**
   * @description Definitions of variables for data from .json files
