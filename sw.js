@@ -3,7 +3,7 @@
  */
 
 // Cache name
-let cacheMap = 'cacheMap-1';
+let cacheMap = 'cacheMap-2';
 
 // Files list to cache
 let cacheFiles = [
