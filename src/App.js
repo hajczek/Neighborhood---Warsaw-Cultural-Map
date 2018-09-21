@@ -3,7 +3,7 @@
   */
 import React, { Component } from 'react'
 import Map from './map.js'
-import './Styles.css'
+import './App.css'
 import Menu from './Menu.js'
 import Places from './Places.js'
 import InformationBox from './informationBox.js'
