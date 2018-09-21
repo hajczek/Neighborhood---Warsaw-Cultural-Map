@@ -1,2 +1,290 @@
-body{margin:0;padding:0;font-family:sans-serif}body,html{height:100%;margin:0;padding:0;font-size:16px;background-color:#eee}#panel{width:290px;display:none;position:absolute;left:0;top:50px;z-index:10;background-color:#fff}#open-menu{left:105px;padding:6px}#close-menu,#open-menu{position:absolute;top:11px;z-index:10;background-color:#000;font-size:.8em;color:#fff;cursor:pointer;border:none}#close-menu{left:255px;padding:4px 8px}#close-menu:hover,#open-menu:hover{background-color:#eee;color:#222}nav{background:#fff;border-radius:3px;height:100%;line-height:35px;padding:10px 10px 0 20px;text-align:left;width:260px}nav button{display:block;float:left;width:120px;margin-top:5px;background-color:#eee;border-radius:5px;cursor:pointer}nav button:hover{background-color:#fefefe}#show-museums,#show-theatres{margin-right:10px}#show-galeries,#show-museums{margin-top:10px}#show-all{width:250px;margin:10px 0 5px;padding:10px 0}h1{font-size:1.2em;margin-bottom:0}h1,h2{padding-left:20px}h2{font-size:1.1em}h3{font-size:1em}#list-of-places{width:230px;height:280px;overflow-y:scroll;margin-left:10px;scroll-behavior:auto;background-color:#eee;padding-top:10px;padding-bottom:15px}#list-of-places li,#results{color:#0c4880;cursor:pointer;line-height:1.4;margin-bottom:20px;padding:3px 0}#list-of-places li:hover,#results:hover{background-color:#fff;color:#072d52;text-decoration:none}#map{bottom:0;height:100%;left:0;position:absolute;right:0;z-index:1}#info-window{overflow:hidden}.gm-style-iw{border-radius:2px 2px 0 0;width:200px!important}#title{font-size:1em;font-weight:700}#info-title{margin-right:10px;text-decoration:underline;margin-top:20px;width:100%}#address,#info-title{display:block;float:left;margin-bottom:8px}#address{margin-top:0}#short-article{width:100%}#results,#short-article{display:block;float:left;margin-top:0;margin-bottom:0}#results{font-size:1em;font-weight:700}#info{color:red;padding:5px;display:block;float:left;width:100%;margin:0!important;padding:0!important;margin-bottom:20px}.textBtn{position:relative;top:-10px;left:3px}#show-all .textBtn{top:0;left:0}#container-offline{width:100%;height:100%;background:-webkit-radial-gradient(circle,transparent 20%,#708090 0,#708090 80%,transparent 0,transparent),-webkit-radial-gradient(circle,transparent 20%,#708090 0,#708090 80%,transparent 0,transparent) 50px 50px,-webkit-linear-gradient(#a8b1bb 8px,transparent 0) 0 -4px,-webkit-linear-gradient(left,#a8b1bb 8px,transparent 0) -4px 0;background:-o-radial-gradient(circle,transparent 20%,#708090 20%,#708090 80%,transparent 80%,transparent),-o-radial-gradient(circle,transparent 20%,#708090 20%,#708090 80%,transparent 80%,transparent) 50px 50px,-o-linear-gradient(#a8b1bb 8px,transparent 8px) 0 -4px,-o-linear-gradient(left,#a8b1bb 8px,transparent 8px) -4px 0;background:radial-gradient(circle,transparent 20%,#708090 0,#708090 80%,transparent 0,transparent),radial-gradient(circle,transparent 20%,#708090 0,#708090 80%,transparent 0,transparent) 50px 50px,linear-gradient(#a8b1bb 8px,transparent 0) 0 -4px,linear-gradient(90deg,#a8b1bb 8px,transparent 0) -4px 0;background-color:#708090;background-size:100px 100px,100px 100px,50px 50px,50px 50px}#info-offline{position:absolute;left:320px;background-color:#fff;padding:10px 20px}#info-box{position:absolute;left:250px;top:0;z-index:10;color:#000;background-color:#ff0;padding:20px;width:220px;line-height:1.4;display:none;-webkit-box-shadow:0 0 1em #ff0;box-shadow:0 0 1em #ff0;font-size:.95em}.show{display:block!important}.hide{display:none!important}#det{width:98%;font-size:.9em;padding:10px 10px 40px;background-color:#eee;color:#000;height:15%;overflow-y:scroll}#det,footer{position:absolute;bottom:0;z-index:10}footer{display:block;background-color:#fff;font-size:.8em;padding-left:10px;color:#444;padding:0 10px;width:100%}footer p{margin:0!important}@media (max-width:767px){#open-menu{left:120px;padding:10px}}
-/*# sourceMappingURL=main.9e4f9dfe.css.map*/
+html, body {
+  height: 100%; 
+  margin: 0; 
+  padding: 0;
+  font-size: 16px;
+  background-color: #eee;
+}
+
+#panel {
+  width: 290px;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  z-index: 10;
+  background-color: #fff;
+}
+
+#open-menu {
+  position: absolute;
+  top:10px;
+  left: 180px;
+  z-index: 10;
+  background-color:#000;
+  padding: 12px 11px 11px 11px;
+  font-size: 1em;
+  color:#fff;
+  cursor: pointer;
+  border: none;
+}
+
+#close-menu {
+  position: absolute;
+  top: 10px;
+  left: 255px;
+  z-index: 10;
+  background-color: #000;
+  padding: 4px 8px;
+  font-size: 0.8em;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+#open-menu:hover,
+#close-menu:hover {
+  background-color:#eee;
+  color:#222;
+}
+
+nav {
+  background: #fff;
+  border-radius: 3px;
+  height: 100%;
+  line-height: 35px;
+  padding: 10px 10px 0 20px;
+  text-align: left;
+  width: 260px;
+}
+
+nav button {
+  display: block;
+  float: left;
+  width: 120px;
+  margin-top: 5px;
+  background-color: #eee;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background-color:#fefefe;
+}
+
+#show-theatres,
+#show-museums {
+  margin-right: 10px;
+}
+
+#show-museums,
+#show-galeries {
+  margin-top: 10px;
+}
+
+#show-all {
+  width: 250px;
+  margin: 10px 0 5px 0;
+  padding: 10px 0;
+}
+
+h1 {
+  font-size: 1.2em;
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+h2 {
+  padding-left: 20px;
+  font-size: 1.1em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+#list-of-places {
+  width: 230px;
+  height: 280px;
+  overflow-y: scroll;
+  margin-left: 10px;
+  scroll-behavior: auto;
+  background-color: #eee;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+#list-of-places li,
+#results {
+  color: rgb(12, 72, 128);
+  cursor: pointer;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  padding: 3px 0;
+}
+
+#list-of-places li:hover,
+#results:hover {
+  background-color: #fff;
+  color: rgb(7, 45, 82);
+  text-decoration: none;
+}
+
+#map {
+  bottom: 0px;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0px;
+  z-index: 1;
+}
+
+#info-window {
+  overflow: hidden;
+}
+
+.gm-style-iw {
+  border-radius: 2px 2px 0 0;
+  width: 200px !important;
+}
+
+#title {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#info-title {
+  display: block;
+  float: left;
+  margin-right: 10px;
+  text-decoration: underline;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+#address {
+  display: block;
+  float: left;
+  margin-top:0;
+  margin-bottom: 8px;
+}
+
+#short-article {
+  display: block;
+  float: left;
+  width: 100%;
+  margin-top:0;
+  margin-bottom: 0;
+}
+
+#results {
+  display: block;
+  float: left;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top:0;
+  margin-bottom: 0;
+}
+
+#info {
+  color: #ff0000;
+  padding: 5px;
+  display: block;
+  float: left;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 20px;
+}
+
+.textBtn {
+  position: relative;
+  top: -10px;
+  left: 3px;
+}
+
+#show-all .textBtn {
+  top: 0;
+  left: 0;
+}
+
+#container-offline {
+  width:100%;
+  height: 100%;
+  /* definition for background from site: http://lea.verou.me/css3patterns/#cross */
+  background: 
+  radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent),
+  radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent) 50px 50px,
+  linear-gradient(#A8B1BB 8px, transparent 8px) 0 -4px,
+  linear-gradient(90deg, #A8B1BB 8px, transparent 8px) -4px 0;
+  background-color: slategray;
+  background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
+}
+
+#info-offline {
+  position: absolute;
+  left: 320px;
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
+#info-box {
+  position: absolute;
+  left: 250px;
+  top: 0;
+  z-index:10;
+  color:#000;
+  background-color:yellow;
+  padding: 20px;
+  width: 220px;
+  line-height: 1.4;
+  display: none;
+  box-shadow: 0 0 1em yellow;
+  font-size: 0.95em;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+#det {
+  position: absolute;
+  bottom: 0;
+  width: 98%;
+  z-index: 10;
+  font-size: 0.9em;
+  padding: 10px 10px 40px 10px;
+  background-color: #eee;
+  color: #000;
+  height: 15%;
+  overflow-y: scroll;
+}
+
+footer {
+  display: block;
+  z-index: 10;
+  background-color: #fff;
+  bottom: 0;
+  position: absolute;
+  font-size: 0.8em;
+  padding-left: 10px;
+  color: #444;
+  padding: 0 10px;
+  width: 100%;
+}
+
+footer p {
+  margin: 0 !important;
+}
+
+@media (max-width:767px) {
+  #open-menu {
+    left: 200px;
+    padding: 10px;
+  }
+}/*# sourceMappingURL=main.9e4f9dfe.css.map*/
